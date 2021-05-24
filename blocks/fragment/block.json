@@ -1,0 +1,58 @@
+{
+    "slug": "fragment",
+    "title": "Fragmento",
+    "desc": "Fragmento de conteúdo com ícone, título e texto",
+    "icon": " fas fa-paragraph text-primary",
+    "categ": "emertechblock",
+    "attrs": {
+        
+        "anchor": {
+            "type": "string"
+        },
+        "figure": {
+            "type": "string"
+        },
+        "title": {
+            "type": "string"
+        },
+        "text": {
+            "type": "string"
+        }
+    },
+    "edit": [
+        {
+            "tag": "input",
+            "type": "text",
+            "attr": "anchor",
+            "label": "Âncora HTML",
+            "help": "Caso queira criar um link dentro da página"
+        },
+        {
+            "tag": "title",
+            "title": "Figura"
+        },
+        {
+            "tag": "input",
+            "type": "image",
+            "attr": "figure",
+            "label": "Figura"
+        },
+        {
+            "tag": "title",
+            "title": "Título e texto"
+        },
+        {
+            "tag": "input",
+            "type": "text",
+            "attr": "title",
+            "label": "Título"
+        },
+        {
+            "tag": "input",
+            "type": "rich",
+            "attr": "text",
+            "label": "Texto"
+        }
+    ]
+
+}

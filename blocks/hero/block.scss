@@ -1,0 +1,61 @@
+$opacity: 0.7;
+$background_top: rgba(0,0,0,0);
+$background_bottom: rgba(0,0,0,1);
+
+$background: #222;
+
+$height: 80vh;
+
+$text_color: #fff;
+
+.eb-hero {
+    width: 100%;
+    height: $height;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    background-attachment: scroll;
+    position: relative;
+
+    color: $text_color;
+    
+    &::before {
+        content: '';
+
+        position: absolute;
+
+        // top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+
+        
+        height: calc(#{$height} - 122px);
+
+        z-index: 1;
+
+        opacity: $opacity;
+            
+        background: linear-gradient($background_top, $background_bottom);
+    }
+
+    & > div {
+        z-index: 2;
+
+        .content {
+
+            .title {
+                // font-size: 32px;
+            }
+
+            .text {
+                p {
+                    margin-bottom: 0.5rem;
+                }
+            }
+
+            .action {
+            }
+        }
+    }
+}

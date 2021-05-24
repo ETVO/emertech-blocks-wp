@@ -1,0 +1,78 @@
+{
+    "slug": "hero",
+    "title": "Hero",
+    "desc": "Hero da página inicial com texto e ação",
+    "icon": " fas fa-flag  text-primary",
+    "categ": "emertechblock",
+    "attrs": {
+        "title": {
+            "type": "string"
+        },
+        "text": {
+            "type": "string"
+        },
+        "bgImage": {
+            "type": "string"
+        },
+        "btnText": {
+            "type": "string"
+        },
+        "btnUrl": {
+            "type": "string"
+        },
+        "btnNewTab": {
+            "type": "boolean",
+            "default": true
+        }
+    },
+    "edit": [
+        {
+            "tag": "title",
+            "title": "Imagem de fundo"
+        },
+        {
+            "tag": "input",
+            "type": "image",
+            "attr": "bgImage",
+            "label": "Imagem de Fundo"
+        },
+        {
+            "tag": "title",
+            "title": "Título e texto"
+        },
+        {
+            "tag": "input",
+            "type": "text",
+            "attr": "title",
+            "label": "Título"
+        },
+        {
+            "tag": "input",
+            "type": "rich",
+            "attr": "text",
+            "label": "Texto"
+        },
+        {
+            "tag": "title",
+            "title": "Botão de ação"
+        },
+        {
+            "tag": "input",
+            "type": "text",
+            "attr": "btnText",
+            "label": "Texto do botão"
+        },
+        {
+            "tag": "input",
+            "type": "url",
+            "attr": "btnUrl",
+            "label": "URL do botão"
+        },
+        {
+            "tag": "input",
+            "type": "check",
+            "attr": "btnNewTab",
+            "label": "Abrir em nova guia?"
+        }
+    ]
+}

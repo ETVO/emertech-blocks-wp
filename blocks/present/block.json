@@ -1,0 +1,90 @@
+{
+    "slug": "present",
+    "title": "Apresentação",
+    "desc": "Apresentação da página Sobre",
+    "icon": " fas fa-eye text-primary",
+    "categ": "emertechblock",
+    "attrs": {
+        "title1": {
+            "type": "string"
+        },
+        "title2": {
+            "type": "string"
+        },
+        "text": {
+            "type": "string"
+        },
+        "imageTop": {
+            "type": "string"
+        },
+        "imageSide": {
+            "type": "string"
+        },
+        "brand": {
+            "type": "string"
+        },
+        "linkText": {
+            "type": "string"
+        },
+        "linkAnchor": {
+            "type": "string"
+        }
+    },
+    "edit": [
+        {
+            "tag": "title",
+            "title": "Imagens"
+        },
+        {
+            "tag": "input",
+            "type": "image",
+            "attr": "imageTop",
+            "label": "Imagem de Fundo"
+        },
+        {
+            "tag": "input",
+            "type": "image",
+            "attr": "imageSide",
+            "label": "Imagem de Conteúdo"
+        },
+        {
+            "tag": "title",
+            "title": "Título e texto"
+        },
+        {
+            "tag": "input",
+            "type": "text",
+            "attr": "title1",
+            "label": "Título Parte 1"
+        },
+        {
+            "tag": "input",
+            "type": "text",
+            "attr": "title2",
+            "label": "Título Parte 2"
+        },
+        {
+            "tag": "input",
+            "type": "rich",
+            "attr": "text",
+            "label": "Texto",
+            "tagName": "p"
+        },
+        {
+            "tag": "title",
+            "title": "Botão de ação"
+        },
+        {
+            "tag": "input",
+            "type": "text",
+            "attr": "linkText",
+            "label": "Texto do botão"
+        },
+        {
+            "tag": "input",
+            "type": "text",
+            "attr": "linkAnchor",
+            "label": "Âncora do botão"
+        }
+    ]
+}

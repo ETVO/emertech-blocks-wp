@@ -1,0 +1,114 @@
+$border-radius: 5px;
+$border-color: #ccc;
+$border-width: 1px;
+$fg-color: #111;
+$bg-color: #fff;
+$fg-color-active: rgb(194, 16, 0);
+$bg-color-active: rgba(204, 17, 0, 0.1);
+$button-border-color-focus: rgb(194, 16, 0);
+
+$padding-x: 1rem;
+$padding-y: 1.25rem;
+
+$icon-width: 1.25rem;
+
+$button-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$fg-color}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !default;
+$button-icon-active: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$fg-color-active}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !default;
+
+.accordion {
+    .accordion-item {
+        background-color: $bg-color;
+        color: $fg-color;
+        border: $border-width solid $border-color;
+        border-radius: $border-radius;
+
+        .accordion-header {
+            margin-bottom: 0;
+
+            .accordion-button {
+                cursor: pointer;
+
+                position: relative;
+                display: flex;
+                align-items: center;
+                width: 100%;
+                padding: $padding-y $padding-x;
+                font-size: 20px;
+                text-align: left;
+                border: 0;
+                border-top-left-radius: $border-radius;
+                border-top-right-radius: $border-radius;
+
+                background-color: $bg-color;
+                color: $fg-color;
+
+                transition: color 0.15s ease, background-color 0.15s ease;
+
+                &:not(.collapsed) {
+                    background-color: $bg-color-active;
+                    color: $fg-color-active;
+
+                    &::after {
+                        content: "\f078";
+                        font-family: "Font Awesome 5 Free";
+                        font-weight: 900;
+                        transform: rotate(-180deg);
+                    }
+                }
+
+                // Accordion icon
+                &::after {
+                    flex-shrink: 0;
+                    font-size: $icon-width;
+                    margin-left: auto;
+                    margin-right: 10px;
+                    content: "\f078";
+                    font-family: "Font Awesome 5 Free";
+                    font-weight: 900;
+                    transition: transform .2s ease-in-out;
+                }
+
+                &:hover {
+                    z-index: 2;
+                }
+              
+                &:focus {
+                    z-index: 3;
+                    border-color: $button-border-color-focus;
+                    outline: 0;
+                }
+            }
+
+        }
+
+        .accordion-collapse {
+
+            &.collapse {
+                display: none;
+                overflow: hidden;
+
+                transition: max-height 0.5s;
+            }
+
+            &.show {
+                display: block;
+            }
+            
+            .accordion-body {
+                padding: $padding-y $padding-x;
+            }
+        }
+    }
+}
+
+// .collapse {
+//   &:not(.show) {
+//     display: none;
+//   }
+// }
+
+// .collapsing {
+//   height: 0;
+//   overflow: hidden;
+//   transition: height .35s ease;
+// }

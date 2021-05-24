@@ -1,0 +1,83 @@
+{
+    "slug": "ribbon",
+    "title": "Fita",
+    "desc": "Fita de conteúdo com título e texto",
+    "icon": " fas fa-ribbon text-primary",
+    "categ": "emertechblock",
+    "attrs": {
+        
+        "anchor": {
+            "type": "string"
+        },
+        "align": {
+            "type": "string"
+        },
+        "bgColor": {
+            "type": "string"
+        },
+        "title": {
+            "type": "string"
+        },
+        "text": {
+            "type": "string"
+        }
+    },
+    "edit": [
+        {
+            "tag": "input",
+            "type": "text",
+            "attr": "anchor",
+            "label": "Âncora HTML",
+            "help": "Caso queira criar um link dentro da página"
+        },
+        {
+            "tag": "input",
+            "type": "select",
+            "attr": "align",
+            "label": "Alinhamento",
+            "options": [
+                {
+                    "value": "right",
+                    "label": "Alinhado à Direita"
+                },
+                {
+                    "value": "left",
+                    "label": "Alinhado à Esquerda"
+                }
+            ]
+        },
+        {
+            "tag": "input",
+            "type": "select",
+            "attr": "bgColor",
+            "label": "Cor de Fundo",
+            "options": [
+                {
+                    "value": "red",
+                    "label": "Vermelho"
+                },
+                {
+                    "value": "gray",
+                    "label": "Cinza"
+                }
+            ]
+        },
+        {
+            "tag": "title",
+            "title": "Título e texto"
+        },
+        {
+            "tag": "input",
+            "type": "text",
+            "attr": "title",
+            "label": "Título"
+        },
+        {
+            "tag": "input",
+            "type": "rich",
+            "attr": "text",
+            "label": "Texto"
+        }
+    ]
+
+}

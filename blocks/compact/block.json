@@ -1,0 +1,60 @@
+{
+    "slug": "compact",
+    "title": "Formulário Compacto",
+    "desc": "Formulário compacto",
+    "icon": " fas fa-info text-primary",
+    "categ": "emertechblock",
+    "attrs": {   
+        "title": {
+            "type": "string"
+        },
+        "subtitle": {
+            "type": "string"
+        },
+        "symbol": {
+            "type": "string"
+        },     
+        "shortcode": {
+            "type": "string"
+        }
+    },
+    "edit": [
+        {
+            "tag": "title",
+            "title": "Título e subtítulo"
+        },
+        {
+            "tag": "input",
+            "type": "text",
+            "attr": "title",
+            "label": "Título"
+        },
+        {
+            "tag": "input",
+            "type": "text",
+            "attr": "subtitle",
+            "label": "Subtítulo"
+        },
+        {
+            "tag": "title",
+            "title": "Símbolo"
+        },
+        {
+            "tag": "input",
+            "type": "image",
+            "attr": "symbol",
+            "label": "Símbolo acima do título"
+        },
+        {
+            "tag": "title",
+            "title": "Shortcode"
+        },
+        {
+            "tag": "input",
+            "type": "text",
+            "attr": "shortcode",
+            "label": "Código do Formulário"
+        }
+    ]
+
+}

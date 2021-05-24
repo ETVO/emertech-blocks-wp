@@ -1,0 +1,27 @@
+{
+    "category": "Emertech Custom Blocks",
+    "startCollapsed": true,
+    "blocks": [
+        {
+            "path": "./hero/"
+        },
+        {
+            "path": "./display/"
+        },
+        {
+            "path": "./stripe/"
+        },
+        {
+            "path": "./compact/"
+        },
+        {
+            "path": "./present/"
+        },
+        {
+            "path": "./fragment/"
+        },
+        {
+            "path": "./ribbon/"
+        }
+    ]
+}

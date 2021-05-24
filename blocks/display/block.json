@@ -1,0 +1,108 @@
+{
+    "slug": "display",
+    "title": "Display",
+    "desc": "Exibição de uma especialidade ou área da empresa",
+    "icon": " fas fa-stream text-primary",
+    "categ": "emertechblock",
+    "styles": [
+        
+    ],
+    "attrs": {
+        "title": {
+            "type": "string"
+        },
+        "text": {
+            "type": "string"
+        },
+        "image": {
+            "type": "string"
+        },
+        "btnText": {
+            "type": "string"
+        },
+        "btnUrl": {
+            "type": "string"
+        },
+        "btnNewTab": {
+            "type": "string",
+            "default": true
+        },
+        "marqueeEnable": {
+            "type": "boolean"
+        },
+        "marqueeSource": {
+            "type": "integer"
+        },
+        "alignStyle": {
+            "type": "string",
+            "default": "right"
+        }
+    },
+    "edit": [
+        {
+            "tag": "input",
+            "type": "select",
+            "attr": "alignStyle",
+            "label": "Alinhamento do bloco",
+            "options": [
+                {
+                    "value": "right",
+                    "label": "Alinhado à Direita"
+                },
+                {
+                    "value": "left",
+                    "label": "Alinhado à Esquerda"
+                }
+            ]
+        },
+        {
+            "tag": "title",
+            "title": "Título e texto"
+        },
+        {
+            "tag": "input",
+            "type": "text",
+            "attr": "title",
+            "label": "Título"
+        },
+        {
+            "tag": "input",
+            "type": "rich",
+            "attr": "text",
+            "label": "Texto"
+        },
+        {
+            "tag": "title",
+            "title": "Imagem"
+        },
+        {
+            "tag": "input",
+            "type": "image",
+            "attr": "image",
+            "label": "Imagem"
+        },
+        {
+            "tag": "title",
+            "title": "Botão de ação"
+        },
+        {
+            "tag": "input",
+            "type": "text",
+            "attr": "btnText",
+            "label": "Texto do botão"
+        },
+        {
+            "tag": "input",
+            "type": "url",
+            "attr": "btnUrl",
+            "label": "URL do botão"
+        },
+        {
+            "tag": "input",
+            "type": "check",
+            "attr": "btnNewTab",
+            "label": "Abrir em nova guia?"
+        }
+    ],
+    "render": "JSX"
+}

@@ -1,0 +1,102 @@
+@import "components";
+
+.interface-interface-skeleton__content {
+    overflow-y: scroll;
+}
+
+div[data-type^="emertechblock"] {
+    // background-color: #fff;
+    // border: solid 1px #ccc;
+    // border-radius: 3px;
+    // padding: 20px;
+
+
+    .category-title {
+        color: #888;
+    }
+
+    .block-title {
+        margin: 0;
+        display: flex;
+        span {
+            margin: auto 0 auto 10px;
+        }
+    }
+
+    .accordion-button {
+        
+        font-size: 20px;
+
+        .block-icon {
+            display: block;
+            color: inherit !important;
+        }
+        
+        small {
+            display: block !important;
+            // width: 100%;
+            font-size: 14px;
+            font-weight: 400;
+            color: #333;
+        }
+    }
+
+    .accordion-header {
+        margin: 0;
+    }
+
+    .hr-title {
+        margin-top: 20px;
+        margin-bottom: 0;
+    }
+
+    hr {
+        margin-top: 0;
+    }
+
+    .p-title {
+        margin: 0;
+    }
+
+    .h-text {
+        margin: 0;
+    }
+
+    .components-base-control {
+        margin: 10px 0;
+    }
+
+    .components-base-control__help {
+        margin: 0;
+    }
+
+    .components-base-control__label, .components-base-control label {
+        font-size: 16px;
+        margin-bottom: 0;
+    }
+
+    input[type="text"], 
+    textarea {
+        padding: 6px 8px;
+        display: block;
+        border: solid 1px #ccc !important;
+        border-radius: 3px !important;
+    }
+    
+    .components-input-control__container {
+        padding: 2px;
+        display: block;
+    }
+
+    .components-input-control__backdrop { 
+        border: solid 1px #ccc !important;
+        border-radius: 3px !important;
+    }
+
+    .rich-text {
+        margin: 0.5rem 0 !important;
+        border: solid 1px #ccc !important;
+        border-radius: 3px !important;
+        padding: 6px 8px;
+    }
+}

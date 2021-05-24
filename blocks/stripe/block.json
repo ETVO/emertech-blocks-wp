@@ -1,0 +1,88 @@
+{
+    "slug": "stripe",
+    "title": "Stripe",
+    "desc": "Faixa de conteúdo que direciona o usuário a outra página do site",
+    "icon": " fas fa-heading text-primary",
+    "categ": "emertechblock",
+    "attrs": {
+        
+        "title": {
+            "type": "string"
+        },
+        "text": {
+            "type": "string"
+        },
+        "brand": {
+            "type": "string"
+        },
+        "btnText": {
+            "type": "string"
+        },
+        "btnUrl": {
+            "type": "string"
+        },
+        "btnNewTab": {
+            "type": "boolean",
+            "default": true
+        },
+        "background": {
+            "type": "string",
+            "default": "dark"
+        },
+        "foreground": {
+            "type": "string",
+            "default": "light"
+        }
+    },
+    "edit": [
+        {
+            "tag": "title",
+            "title": "Título e texto"
+        },
+        {
+            "tag": "input",
+            "type": "text",
+            "attr": "title",
+            "label": "Título"
+        },
+        {
+            "tag": "input",
+            "type": "rich",
+            "attr": "text",
+            "label": "Texto"
+        },
+        {
+            "tag": "title",
+            "title": "Marca"
+        },
+        {
+            "tag": "input",
+            "type": "image",
+            "attr": "brand",
+            "label": "Marca"
+        },
+        {
+            "tag": "title",
+            "title": "Botão de ação"
+        },
+        {
+            "tag": "input",
+            "type": "text",
+            "attr": "btnText",
+            "label": "Texto do botão"
+        },
+        {
+            "tag": "input",
+            "type": "url",
+            "attr": "btnUrl",
+            "label": "URL do botão"
+        },
+        {
+            "tag": "input",
+            "type": "check",
+            "attr": "btnNewTab",
+            "label": "Abrir em nova guia?"
+        }
+    ]
+
+}
