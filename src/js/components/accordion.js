@@ -2,6 +2,7 @@
     function($) {
 
         $(document.body).ready(function() {
+
             $(".accordion-button").each(function(i) {
                 $(this).click(() => {
                     if($(this).data('toggle') == "collapse") {

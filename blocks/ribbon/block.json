@@ -15,6 +15,9 @@
         "bgColor": {
             "type": "string"
         },
+        "style": {
+            "type": "string"
+        },
         "title": {
             "type": "string"
         },
@@ -33,22 +36,6 @@
         {
             "tag": "input",
             "type": "select",
-            "attr": "align",
-            "label": "Alinhamento",
-            "options": [
-                {
-                    "value": "right",
-                    "label": "Alinhado à Direita"
-                },
-                {
-                    "value": "left",
-                    "label": "Alinhado à Esquerda"
-                }
-            ]
-        },
-        {
-            "tag": "input",
-            "type": "select",
             "attr": "bgColor",
             "label": "Cor de Fundo",
             "options": [
@@ -59,6 +46,22 @@
                 {
                     "value": "gray",
                     "label": "Cinza"
+                }
+            ]
+        },
+        {
+            "tag": "input",
+            "type": "select",
+            "attr": "style",
+            "label": "Estilo",
+            "options": [
+                {
+                    "value": "rounded",
+                    "label": "Curvado"
+                },
+                {
+                    "value": "right",
+                    "label": "Reto"
                 }
             ]
         },

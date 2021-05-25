@@ -37,8 +37,11 @@ final class Emertech_Blocks_Plugin {
         add_action('init', array(EMERTECH_PLUGIN_CLASS_NAME, 'plugin_setup'));
 
         // Enqueue scripts on init        
-        add_action('init', array(EMERTECH_PLUGIN_CLASS_NAME, 'plugin_css'));
-        add_action('init', array(EMERTECH_PLUGIN_CLASS_NAME, 'plugin_js'));
+        add_action('wp_enqueue_scripts', array(EMERTECH_PLUGIN_CLASS_NAME, 'plugin_css'));
+        add_action('wp_enqueue_scripts', array(EMERTECH_PLUGIN_CLASS_NAME, 'plugin_js'));
+
+        add_action('admin_enqueue_scripts', array(EMERTECH_PLUGIN_CLASS_NAME, 'plugin_admin_css'));
+        add_action('admin_enqueue_scripts', array(EMERTECH_PLUGIN_CLASS_NAME, 'plugin_admin_js'));
 
         // Filter to add custom block category
         add_filter( 'block_categories', array(EMERTECH_PLUGIN_CLASS_NAME, 'custom_blocks_category'), 10, 2);
@@ -59,6 +62,9 @@ final class Emertech_Blocks_Plugin {
 
         // Include paths
         define('EMERTECH_PLUGIN_INC_URL', EMERTECH_PLUGIN_URL . 'inc/');
+
+        // Image paths
+        define('EMERTECH_PLUGIN_IMG_URL', EMERTECH_PLUGIN_URL . 'assets/img/');
         
     }
 
@@ -90,6 +96,36 @@ final class Emertech_Blocks_Plugin {
             is_admin() ? array('wp-editor') : null,
             null
         );
+    }
+
+    /**
+     * Enqueue JS
+     * 
+     * @since 1.0
+     */
+    public function plugin_js() {
+
+        $dir = EMERTECH_PLUGIN_JS_URL;
+
+        // Registering the blocks.js file in the dist folder
+        wp_enqueue_script(
+            'emertech-blocks-front-scripts',
+            $dir . 'front.js',
+            array(),
+            null,
+            true
+        );
+
+    }
+
+    /**
+     * Enqueue CSS for admin
+     * 
+     * @since 1.0
+     */
+    public function plugin_admin_css() {
+
+        $dir = EMERTECH_PLUGIN_CSS_URL;
 
         // Registering the editor.css for backend
         wp_enqueue_style(
@@ -101,11 +137,11 @@ final class Emertech_Blocks_Plugin {
     }
 
     /**
-     * Enqueue JS
+     * Enqueue JS for admin
      * 
      * @since 1.0
      */
-    public function plugin_js() {
+    public function plugin_admin_js() {
 
         $dir = EMERTECH_PLUGIN_JS_URL;
 
@@ -128,7 +164,6 @@ final class Emertech_Blocks_Plugin {
                 'homeUrl' => home_url(),
             ]
         );
-
     }
 
     /**
