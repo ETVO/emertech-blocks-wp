@@ -1,0 +1,20 @@
+@import 'tl-inner/block.scss';
+
+.eb-timeline {
+    .container {
+        .title {
+            display: none;
+        }
+        .wrap {
+            border-left: solid 2px #888;
+        }
+    }
+
+    &.show-title-1 {
+        .container {
+            .title {
+                display: block !important;
+            }
+        }
+    }
+}

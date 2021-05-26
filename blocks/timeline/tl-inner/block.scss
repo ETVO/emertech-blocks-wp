@@ -1,0 +1,16 @@
+.eb-tl-inner {
+    > .title {
+        display: none;
+    }
+    .content {
+        border-left: solid 2px #888;
+    }
+
+    &.show-title-1 {
+        > .container {
+            .title {
+                display: block !important;
+            }
+        }
+    }
+}

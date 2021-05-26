@@ -6,11 +6,29 @@ function render_block_present($attributes)
     $title1 = $attributes['title1'];
     $title2 = $attributes['title2'];
     $text = $attributes['text'];
+    
+    $text_order = $attributes['textOrder'] ?? "first";
+    $align = $attributes['align'] ?? "start";
+    $padding = $attributes['padding'] ?? 2;
+
     $image_top_url = $attributes['imageTop'];
+    $show_image_top = $attributes['showImageTop'];
+    if(empty($show_image_top)) $show_image_top = '0';
+
     $image_side_url = $attributes['imageSide'];
+    $show_image_side = $attributes['showImageSide'] ?? '0';
+    if(empty($show_image_side)) $show_image_side = '0';
+
     $brand_url = $attributes['brand'];
+        
     $link_text = $attributes['linkText'];
-    $link_anchor = $attributes['linkAnchor'];
+    $link_anchor = $attributes['linkAnchor'];    
+    $link_arrow = $attributes['linkArrow'] ?? "down";    
+
+    if($padding <= 2) $colSize = 9;
+    if($padding <= 4) $colSize = 10;
+    if($padding == 5) $colSize = 11;
+    if(!$show_image_side) $colSize = 9;
 
     $common_aos = ' data-aos-offset="100"';
 
@@ -24,23 +42,26 @@ function render_block_present($attributes)
 
     ?>
 
-        <section class="eb-present">
+        <section class="eb-present <?php echo "show-image-top-$show_image_top show-image-side-$show_image_side"; ?>">
             <div class="image-top" style="background-image: url('<?php echo $image_top_url; ?>');">
                 <div class="d-flex h-100 d-none">
+                    <!-- hiding it for now... -->
                     <div class="brand mt-auto"
                     <?php echo $brand_aos; ?>>
                         <img src="<?php echo $brand_url; ?>" alt="" class="brand-img">
                     </div>
                 </div>
             </div>
-            <div class="wrap bg-dark text-light px-4">
-                <div class="col-9 row m-auto p-3">
-                    <div class="content col-12 col-lg-8">
+            <div class="wrap bg-dark text-light <?php echo "text-$align"; ?>">
+                <div class="col-<?php echo $colSize ?> m-auto p-3">
+                    <div class="content col-12 col-lg-8 <?php echo "order-$text_order px-$padding"; if(!$show_image_side) echo " col-lg-10"; ?>">
                         <div class="title text-uppercase"
                         <?php echo $title_aos; ?>>
                             <h1>
                                 <?php echo $title1; ?> 
-                                <span><?php echo $title2; ?></span>
+                                <span class="<?php if($title2 == NULL) echo "d-none"; ?>">
+                                    <?php echo $title2; ?>
+                                </span>
                             </h1>
                         </div>
 
@@ -55,16 +76,16 @@ function render_block_present($attributes)
                             </p>
                         </div>
 
-                        <div class="action text-uppercase"
+                        <div class="action text-uppercase <?php if($link_text == NULL) echo "d-none"; ?>"
                         <?php echo $btn_aos; ?>>
                             <a 
-                            class="eb_link light down ico-lg" 
+                            class="eb_link light <?php echo $link_arrow; ?> ico-lg" 
                             href="<?php echo $link_anchor; ?>">
                                 <?php echo $link_text; ?>  
                             </a>
                         </div>
                     </div>
-                    <div class="image col-lg-4"
+                    <div class="image-side col-lg-4 <?php echo " px-$padding"; ?>"
                         <?php echo $img_aos; ?>>
                         <div class="image-side">
                             <img src="<?php echo $image_side_url; ?>" alt="" class="img-fluid">

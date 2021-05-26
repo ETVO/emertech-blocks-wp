@@ -71,12 +71,14 @@ div[data-type^="emertechblock"] {
     }
 
     .components-base-control__label, .components-base-control label {
-        font-size: 16px;
         margin-bottom: 0;
     }
 
-    input[type="text"], 
-    textarea {
+    .components-base-control__field {
+        margin-bottom: 0;
+    }
+
+    .components-text-control__input {
         padding: 6px 8px;
         display: block;
         border: solid 1px #ccc !important;
@@ -98,5 +100,11 @@ div[data-type^="emertechblock"] {
         border: solid 1px #ccc !important;
         border-radius: 3px !important;
         padding: 6px 8px;
+    }
+    
+    .block-editor-inner-blocks {
+        .rich-text {
+            border: none !important;
+        }
     }
 }

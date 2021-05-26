@@ -12,7 +12,8 @@ import data from "./blocks.json";
         MediaUpload,
         URLInput,
         useBlockProps,
-        RichText
+        RichText,
+        InnerBlocks,
     } = wp.blockEditor;
     
     const { 
@@ -31,47 +32,63 @@ import data from "./blocks.json";
     var blocks = [];
     var i = 0;
 
-    function BlockGenerator(data) {
+    class BlockGenerator {
+        constructor(data) {
 
-        if(!data) {
-            console.error("BlockGenerator: Unable to find blocks JSON");
-            return;
+            if(!data) {
+                console.error("BlockGenerator: Unable to find blocks JSON");
+                return;
+            }
+    
+            this.registerBlocks(data.blocks);
         }
-
-        data.blocks.forEach(blockData => {
-
-            // var block = null;
+    
+        registerBlocks(blocks, pathPrefix = "", isChild = false) {
+            blocks.forEach(blockData => {
+                
+                var block = require(pathPrefix + blockData.path + "block.json");
+                block.path = blockData.path;
+                block.isChild = isChild;
+    
+                this.registerBlock(block);
+    
+                if(typeof block.children !== 'undefined' && block.children.length > 0) {
+                    // Register all children blocks with isChild set to true
+                    this.registerBlocks(block.children, pathPrefix + block.path, true);
+                }
+            });
+        }
+    
+        registerBlock(block) {
+    
+            block.name = block.categ + "/" + block.slug;
             
-            var block = require(blockData.path + "block.json");
-            block.path = blockData.path;
-
-            register(block);
-        });
-    }
-
-    function register(block) {
-
-        block.name = block.categ + "/" + block.slug;
-
+            const renderJSX = block.render == "JSX";
+    
+            registerBlockType(block.name, {
+                title: block.title,
+                description: block.desc,
+                icon: block.icon,
+                // parent: block.parent,
+                category: block.categ,
+    
+                attributes: block.attrs,
         
-        const renderJSX = block.render == "JSX";
-
-        registerBlockType(block.name, {
-            title: block.title,
-            description: block.desc,
-            icon: block.icon,
-            category: block.categ,
-
-            attributes: block.attrs,
+                edit: () => {     
+                    return new CustomEdit();
+                },
+        
+                save: () => { 
+                    if(!block.usesInner)
+                        return null;
+                    else {
+                        return <InnerBlocks.Content />
+                    } 
+                }
+            });
     
-            edit: () => {     
-                return new CustomEdit();
-            },
-    
-            save: () => { return null; }
-        });
-
-        blocks.push(block);
+            blocks.push(block);
+        }
     }
 
     var block = null;
@@ -199,11 +216,16 @@ import data from "./blocks.json";
             var label = element.label;
             var help = element.help;
             var tagName = element.tagName;
+
+            // alert("type: " + type);
             
 
-            if(tag != "input") return null;
-            if(label.length == 0) return null;
-            if(attr.length == 0) return null;
+            if(typeof tag != "undefined" && tag != "input") 
+                return null;
+            if(typeof label != "undefined" && label.length == 0) 
+                return null;
+            if(typeof attr != "undefined" && attr.length == 0) 
+                return null;
 
             const { 
                 attributes, 
@@ -323,6 +345,25 @@ import data from "./blocks.json";
                         />
                     </Fragment>;
             }
+            else if(type=="inner") {
+                // const blocks = [ 'emertechblock/stripe' ];
+                const blocks = element.blocks;
+                const template = element.template ?? [];
+                var templateLock = (element.template !== '') ? element.templateLock ?? "all" : "false";
+
+                inputContent = 
+                    <Fragment>
+                        <BaseControl
+                        label={ label }
+                        help={ help }>
+                            <InnerBlocks
+                                allowedBlocks={ blocks }
+                            // template={ template }
+                            // templateLock={ templateLock }
+                            />
+                        </BaseControl>
+                    </Fragment>;
+            }
 
             return inputContent;
         }
@@ -368,6 +409,6 @@ import data from "./blocks.json";
         }
     }
 
-    BlockGenerator(data);
+    new BlockGenerator(data);
 
 }(window.wp)); 

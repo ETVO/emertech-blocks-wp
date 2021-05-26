@@ -1,0 +1,45 @@
+{
+    "slug": "timeline",
+    "title": "Linha do Tempo",
+    "desc": "Linha do tempo sobre a história da empresa",
+    "icon": " fas fa-dot-circle text-primary",
+    "categ": "emertechblock",
+    "attrs": {
+        "title": {
+            "type": "string"
+        },
+        "showTitle": {
+            "type": "boolean"
+        }
+    },
+    "usesInner": true,
+    "edit": [
+        {
+            "tag": "title",
+            "title": "Título"
+        },
+        {
+            "tag": "input",
+            "type": "check",
+            "attr": "showTitle",
+            "label": "Exibir título"
+        },
+        {
+            "tag": "input",
+            "type": "text",
+            "attr": "title",
+            "label": "Título"
+        },
+        {
+            "tag": "input",
+            "type": "inner",
+            "blocks": [ "emertechblock/tl-inner" ],
+            "label": "Blocos"
+        }
+    ],
+    "children": [
+        {
+            "path": "tl-inner/"
+        }
+    ]
+}

@@ -13,6 +13,7 @@ $primary: var(--bs-primary);
 .eb-present {
 
     .image-top {
+        display: none;
         width: 100%;
         height: $top-height;
         background-repeat: no-repeat;
@@ -55,7 +56,6 @@ $primary: var(--bs-primary);
 
         .content {
             z-index: 3;
-            margin-top: -2.25rem;
     
             .title {
                 h1 {
@@ -70,4 +70,28 @@ $primary: var(--bs-primary);
         }
     }
 
+
+    &.show-image-top-1 {
+        .image-top {
+            display: block;
+        }
+        .wrap {
+            .content {
+                margin-top: -2.25rem;
+            }
+
+        }
+    }
+
+    &.show-image-side-0 {
+        .wrap {
+            .content {
+                margin: auto;
+            }
+
+            .image-side {
+                display: none;
+            }
+        }
+    }
 }

@@ -14,11 +14,26 @@
         "text": {
             "type": "string"
         },
+        "textOrder": {
+            "type": "string"
+        },
+        "align": {
+            "type": "string"
+        },
+        "padding": {
+            "type": "string"
+        },
         "imageTop": {
             "type": "string"
         },
+        "showImageTop": {
+            "type": "boolean"
+        },
         "imageSide": {
             "type": "string"
+        },
+        "showImageSide": {
+            "type": "boolean"
         },
         "brand": {
             "type": "string"
@@ -28,25 +43,12 @@
         },
         "linkAnchor": {
             "type": "string"
+        },
+        "linkArrow": {
+            "type": "string"
         }
     },
     "edit": [
-        {
-            "tag": "title",
-            "title": "Imagens"
-        },
-        {
-            "tag": "input",
-            "type": "image",
-            "attr": "imageTop",
-            "label": "Imagem de Fundo"
-        },
-        {
-            "tag": "input",
-            "type": "image",
-            "attr": "imageSide",
-            "label": "Imagem de Conteúdo"
-        },
         {
             "tag": "title",
             "title": "Título e texto"
@@ -61,7 +63,8 @@
             "tag": "input",
             "type": "text",
             "attr": "title2",
-            "label": "Título Parte 2"
+            "label": "Título Parte 2",
+            "help": "Deixar vazio caso queira o título normal"
         },
         {
             "tag": "input",
@@ -71,6 +74,71 @@
             "tagName": "p"
         },
         {
+            "tag": "input",
+            "type": "select",
+            "attr": "align",
+            "label": "Alinhamento do texto",
+            "options": [
+                {
+                    "value": "start",
+                    "label": "Esquerda"
+                },
+                {
+                    "value": "center",
+                    "label": "Centro"
+                },
+                {
+                    "value": "end",
+                    "label": "Direita"
+                }
+            ]
+        },
+        {
+            "tag": "input",
+            "type": "select",
+            "attr": "textOrder",
+            "label": "Ordem de exibição",
+            "options": [
+                {
+                    "value": "first",
+                    "label": "Texto e Imagem"
+                },
+                {
+                    "value": "last",
+                    "label": "Imagem e Texto"
+                }
+            ],
+            "help": "Ordem do Texto e da Imagem da Lateral (não afeta a Imagem de Cima)"
+        },
+        {
+            "tag": "input",
+            "type": "select",
+            "attr": "padding",
+            "label": "Espaçamento entre colunas",
+            "options": [
+                {
+                    "value": "1",
+                    "label": "1"
+                },
+                {
+                    "value": "2",
+                    "label": "2"
+                },
+                {
+                    "value": "3",
+                    "label": "3"
+                },
+                {
+                    "value": "4",
+                    "label": "4"
+                },
+                {
+                    "value": "5",
+                    "label": "5"
+                }
+            ]        
+        },
+        {
             "tag": "title",
             "title": "Botão de ação"
         },
@@ -78,13 +146,62 @@
             "tag": "input",
             "type": "text",
             "attr": "linkText",
-            "label": "Texto do botão"
+            "label": "Texto do botão",
+            "help": "Deixar vazio caso queira esconder o botão"
         },
         {
             "tag": "input",
             "type": "text",
             "attr": "linkAnchor",
             "label": "Âncora do botão"
+        },
+        {
+            "tag": "input",
+            "type": "select",
+            "attr": "linkArrow",
+            "label": "Estilo da seta",
+            "options": [
+                {
+                    "value": "down",
+                    "label": "Apontando para baixo"
+                },
+                {
+                    "value": "right",
+                    "label": "Apontando para a direita"
+                },
+                {
+                    "value": "no-ico",
+                    "label": "Ocultar seta"
+                }
+            ]
+        },
+        {
+            "tag": "title",
+            "title": "Imagens"
+        },
+        {
+            "tag": "input",
+            "type": "image",
+            "attr": "imageTop",
+            "label": "Imagem de Cima"
+        },
+        {
+            "tag": "input",
+            "type": "check",
+            "attr": "showImageTop",
+            "label": "Exibir Imagem de Cima?"
+        },
+        {
+            "tag": "input",
+            "type": "image",
+            "attr": "imageSide",
+            "label": "Imagem da Lateral"
+        },
+        {
+            "tag": "input",
+            "type": "check",
+            "attr": "showImageSide",
+            "label": "Exibir Imagem da Lateral?"
         }
     ]
 }

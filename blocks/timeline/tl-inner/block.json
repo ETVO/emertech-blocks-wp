@@ -1,0 +1,34 @@
+{
+    "slug": "tl-inner",
+    "title": "Instância - Linha do Tempo",
+    "desc": "Conteúdo da linha do tempo",
+    "icon": " fas fa-dot-circle text-primary",
+    "parent": "emertechblock/timeline",
+    "categ": "emertechblock",
+    "attrs": {
+        "title": {
+            "type": "string"
+        },
+        "showTitle": {
+            "type": "boolean"
+        }
+    },
+    "edit": [
+        {
+            "tag": "title",
+            "title": "Título e conteúdo"
+        },
+        {
+            "tag": "input",
+            "type": "check",
+            "attr": "showTitle",
+            "label": "Exibir título?"
+        },
+        {
+            "tag": "input",
+            "type": "text",
+            "attr": "title",
+            "label": "Título"
+        }
+    ]
+}
