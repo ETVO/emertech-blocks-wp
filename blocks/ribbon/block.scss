@@ -3,11 +3,13 @@ $gray: var(--bs-secondary);
 
 $rounded_height: 4.2799vw;
 $right_height: 40px;
-$edge_width: 105vw;
+$edge_width: 100vw;
 $edge_angle: 1.5deg;
 $edge_translate_q: 2;
 
 $icon-width: 1.25rem;
+
+$margin: $rounded_height;
 
 .eb-ribbon {
 
@@ -120,7 +122,7 @@ $icon-width: 1.25rem;
                 }
 
                 &:last-of-type {
-                    margin-bottom: $rounded_height / 2;
+                    margin-bottom: $margin;
                 }
 
                 .top-part, .bottom-part {
@@ -145,7 +147,7 @@ $icon-width: 1.25rem;
                 margin-bottom: $right_height;
 
                 &:first-of-type {
-                    margin-top: $right_height / 2;
+                    margin-top: $margin;
                 }
 
                 .top-part, .bottom-part {

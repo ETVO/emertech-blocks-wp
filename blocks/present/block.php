@@ -53,8 +53,8 @@ function render_block_present($attributes)
                 </div>
             </div>
             <div class="wrap bg-dark text-light <?php echo "text-$align"; ?>">
-                <div class="col-<?php echo $colSize ?> m-auto p-3">
-                    <div class="content col-12 col-lg-8 <?php echo "order-$text_order px-$padding"; if(!$show_image_side) echo " col-lg-10"; ?>">
+                <div class="col-12 col-sm-11 col-md-10 col-lg-<?php echo $colSize ?> m-auto p-3">
+                    <div class="content col-12 col-lg-8 px-2 <?php echo "order-$text_order px-lg-$padding"; if(!$show_image_side) echo " col-lg-10"; ?>">
                         <div class="title text-uppercase"
                         <?php echo $title_aos; ?>>
                             <h1>
@@ -69,7 +69,7 @@ function render_block_present($attributes)
 
                         </div>
 
-                        <div class="text fw-lighter"
+                        <div class="text fw-light"
                         <?php echo $text_aos; ?>>
                             <p>
                                 <?php echo $text; ?>  

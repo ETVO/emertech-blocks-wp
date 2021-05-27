@@ -14,7 +14,7 @@ function render_block_timeline($attributes, $content)
     ?>
 
         <section class="eb-timeline py-3 <?php echo "show-title-$show_title"; ?>">
-            <div class="container col-8">
+            <div class="container col-11 col-md-10 col-lg-9 col-xl-8">
                 <div class="title text-uppercase" <?php echo $title_aos; ?>>
                     <h2>
                         <?php echo $title; ?>

@@ -15,10 +15,9 @@ function render_block_ribbon($attributes)
 
     $common_aos = ' data-aos-offset="100"';
 
-    $title_aos = 'data-aos="fade-right" data-aos-delay="100"' . $common_aos;
-    $text_aos = 'data-aos="fade-right" data-aos-delay="200"' . $common_aos;
-    $bg_aos = 'data-aos="fade-right" data-aos-delay="0"';
-    $bg_aos = '';
+    $title_aos = 'data-aos="fade" data-aos-delay="200"' . $common_aos;
+    $text_aos = 'data-aos="fade" data-aos-delay="200"' . $common_aos;
+    $bg_aos = 'data-aos="fade-up" data-aos-delay="200"';
 
     $start_expanded = false;
 
@@ -26,16 +25,16 @@ function render_block_ribbon($attributes)
 
 ?>
 
-    <section class="eb-ribbon <?php echo "eb-bg-$bgColor eb-align-$align eb-style-$style"; ?>">
+    <section class="eb-ribbon <?php echo "eb-bg-$bgColor eb-align-$align eb-style-$style"; ?>" <?php echo $bg_aos; ?>>
     
         <div class="top-part">
             <?php if($style == "rounded"): ?>
-            <img src="<?php echo EMERTECH_PLUGIN_IMG_URL . 'top.svg'; ?>" alt="" <?php echo $bg_aos; ?>>
+                <img src="<?php echo EMERTECH_PLUGIN_IMG_URL . 'top.svg'; ?>" alt="">
             <?php endif; ?>
         </div>
 
         <div class="main-part d-flex p-2" id="<?php echo $anchor; ?>">
-            <div class="container p-3 pt-0 text-light">
+            <div class="container p-md-3 pt-0 text-light">
                 <h2 class="accordion-header" id="header<?php echo $anchor; ?>">
                     <button class="accordion-button <?php echo ($start_expanded) ? "" : "collapsed"; ?>" type="button" 
                         data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $anchor; ?>" 
@@ -52,7 +51,7 @@ function render_block_ribbon($attributes)
                     aria-labelledby="header<?php echo $anchor; ?>" 
                     data-bs-parent="#<?php echo $anchor; ?>"
                     >
-                    <div class="accordion-body content text fw-light">
+                    <div class="accordion-body content text fw-light px-1 px-md-3 px-lg-4">
                         <p <?php echo $text_aos; ?>>
                             <?php echo $text; ?>
                         </p>
@@ -61,7 +60,7 @@ function render_block_ribbon($attributes)
             </div>
         </div>
 
-        <div class="bottom-part" <?php echo $bg_aos; ?>>
+        <div class="bottom-part">
             <?php if($style == "rounded"): ?>
                 <img src="<?php echo EMERTECH_PLUGIN_IMG_URL . 'bottom.svg'; ?>" alt="">
             <?php endif; ?>

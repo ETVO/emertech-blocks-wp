@@ -97,6 +97,8 @@ class EmertechBlocksRegisterer {
                 // 'editor_script' => 'emertech-admin-bs-script'
             )
         );
+
+        // echo __DIR__ . '/' . $path . '/block.php' . "\n"; #just for debugging
         
         include __DIR__ . '/' . $path . '/block.php';
     }

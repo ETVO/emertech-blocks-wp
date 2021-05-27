@@ -4,6 +4,7 @@
     "desc": "Linha do tempo sobre a história da empresa",
     "icon": " fas fa-dot-circle text-primary",
     "categ": "emertechblock",
+    "usesInner": true,
     "attrs": {
         "title": {
             "type": "string"
@@ -12,7 +13,6 @@
             "type": "boolean"
         }
     },
-    "usesInner": true,
     "edit": [
         {
             "tag": "title",
@@ -33,13 +33,13 @@
         {
             "tag": "input",
             "type": "inner",
-            "blocks": [ "emertechblock/tl-inner" ],
+            "blocks": [ "emertechblock/time" ],
             "label": "Blocos"
         }
     ],
     "children": [
         {
-            "path": "tl-inner/"
+            "path": "time/"
         }
     ]
 }

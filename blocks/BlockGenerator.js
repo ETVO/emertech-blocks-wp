@@ -62,6 +62,12 @@ import data from "./blocks.json";
         registerBlock(block) {
     
             block.name = block.categ + "/" + block.slug;
+
+            if(typeof block.parent != "undefined") {
+                if(!block.parent.includes('/')) {
+                    block.parent = block.categ + '/' + block.parent;
+                }
+            }
             
             const renderJSX = block.render == "JSX";
     
@@ -69,7 +75,7 @@ import data from "./blocks.json";
                 title: block.title,
                 description: block.desc,
                 icon: block.icon,
-                // parent: block.parent,
+                parent: block.parent,
                 category: block.categ,
     
                 attributes: block.attrs,

@@ -1,6 +1,6 @@
-$opacity: 1;
-$background_top: rgba(0,0,0,0) 80%;
-$background_bottom: rgba(#111,1) 100%;
+$opacity: 0.7;
+$background_top: rgba(0,0,0,0);
+$background_bottom: rgba(0,0,0,1);
 
 $text_color: #fff;
 
@@ -35,7 +35,7 @@ $primary: var(--bs-primary);
             
             height: calc(#{$top-height} - 122px);
     
-            z-index: 1;
+            z-index: 0;
     
             opacity: $opacity;
                 
@@ -86,7 +86,8 @@ $primary: var(--bs-primary);
     &.show-image-side-0 {
         .wrap {
             .content {
-                margin: auto;
+                margin-left: auto;
+                margin-right: auto;
             }
 
             .image-side {
