@@ -97,7 +97,7 @@ div[data-type^="emertechblock"] {
 
     .block-editor-rich-text__editable {
         margin: 0.5rem 0 !important;
-        border: solid 1px #ccc !important;
+        // border: solid 1px #ccc !important;
         border-radius: 3px !important;
         padding: 6px 8px;
     }
@@ -106,5 +106,9 @@ div[data-type^="emertechblock"] {
         > .rich-text {
             border: none !important;
         }
+    }
+
+    .select-image-btn {
+        margin-right: 10px;
     }
 }

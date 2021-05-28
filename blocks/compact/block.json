@@ -4,6 +4,7 @@
     "desc": "Conteúdo compacto",
     "icon": " bi bi-tag-fill text-primary",
     "categ": "emertechblock",
+    "usesInner": true,
     "attrs": {   
         "title": {
             "type": "string"
@@ -31,9 +32,21 @@
         },
         {
             "tag": "input",
+            "type": "check",
+            "attr": "showTitle",
+            "label": "Exibir Título?"
+        },
+        {
+            "tag": "input",
             "type": "text",
             "attr": "subtitle",
             "label": "Subtítulo"
+        },
+        {
+            "tag": "input",
+            "type": "check",
+            "attr": "showSubtitle",
+            "label": "Exibir Subtítulo?"
         },
         {
             "tag": "title",

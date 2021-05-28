@@ -10,16 +10,13 @@
             "type": "string"
         },
         "showControls": {
-            "type": "boolean",
-            "default": true
+            "type": "boolean"
         },
         "showIndicators": {
-            "type": "boolean",
-            "default": false
+            "type": "boolean"
         },
         "autoSlide": {
-            "type": "boolean",
-            "default": true
+            "type": "boolean"
         },
         "slideInterval": {
             "type": "integer",

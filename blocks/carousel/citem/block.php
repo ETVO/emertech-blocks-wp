@@ -18,7 +18,7 @@ function render_block_citem($attributes)
     ob_start(); // Start HTML buffering
 
     ?>
-
+        <?php if($image_url): ?>
         <div class="eb-citem carousel-item">
             <img src="<?php echo $image_url; ?>" class="d-block w-100" <?php echo $image_aos; ?>>
             <?php if($show_caption): ?>
@@ -30,6 +30,7 @@ function render_block_citem($attributes)
             </div>
             <?php endif; ?>
         </div>
+        <?php endif; ?>
 
     <?php
 

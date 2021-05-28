@@ -1,4 +1,30 @@
 .eb-compact {
 
     background-color: #111;
+
+    .wrap {
+        .symbol {
+            max-width: 100%;
+            .symbol-img {
+                max-width: 300px;
+                height: auto;
+            }
+        }
+    }
+}
+
+
+@media all and (max-width: 500px) {
+    .eb-compact {
+    
+        .wrap {
+            .symbol {
+                .symbol-img {
+                    max-width: 95%;
+                    height: auto;
+                }
+            }
+        }
+    }
+    
 }

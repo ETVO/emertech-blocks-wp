@@ -316,10 +316,15 @@ import data from "./blocks.json";
             else if(type == "image") {
                 const imageAttr = { 
                     'value': value, 
-                    'name': "background" 
+                    'name': "background" ,
+                    'attr': attr
                 };
 
                 const imageMaxHeight = element.maxHeight ?? "300px";
+
+                var removeEvent = () => {
+                    setAttributes({[attr]: undefined});
+                };
 
                 inputContent = 
                     <Fragment>
@@ -332,7 +337,7 @@ import data from "./blocks.json";
                             onSelect={ (media) => {
                                 setAttributes({[attr]: media.url});
                             } }
-                            render={({ open }) => this.getImageButton(open, imageAttr, imageMaxHeight)}
+                            render={({ open }) => this.getImageButton(open, imageAttr, imageMaxHeight, removeEvent)}
                         />
                     </Fragment>;
             }
@@ -401,7 +406,7 @@ import data from "./blocks.json";
             return inputContent;
         }
         
-        getImageButton (openEvent, attr, imageMaxHeight) {
+        getImageButton (openEvent, attr, imageMaxHeight, removeEvent = null) {
             if (attr['value']) {
 
                 return (
@@ -415,9 +420,15 @@ import data from "./blocks.json";
                         <div className="button-container">
                             <Button
                                 onClick={openEvent}
-                                className="button button-large"
+                                className="button button-large select-image-btn"
                             >
                                 { this.getSelectImageText() }
+                            </Button>
+                            <Button
+                                onClick={ removeEvent }
+                                isDestructive={true}
+                            >
+                                { this.getRemoveImageText() }
                             </Button>
                         </div>
                     ]
@@ -439,6 +450,10 @@ import data from "./blocks.json";
 
         getSelectImageText() {
             return __("Selecione uma Imagem");
+        }
+
+        getRemoveImageText() {
+            return __("Remover Imagem");
         }
     }
 

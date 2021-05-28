@@ -16,4 +16,19 @@
         // background: #00000066;
         border-radius: 1rem;
     }
+
+    &.eb-show {
+        &-indicators-0 {
+            .carousel-indicators {
+                display: none;
+            }
+        }
+
+        &-controls-0 {
+            .carousel-control-prev,
+            .carousel-control-next {
+                display: none;
+            }
+        }
+    }
 }
