@@ -12,14 +12,14 @@ function render_block_compact($attributes, $content) {
     $symbol_aos = 'data-aos="fade-down" data-aos-delay="100"' . $common_aos;
     $title_aos = 'data-aos="fade-down" data-aos-delay="100"' . $common_aos;
     $subtitle_aos = 'data-aos="fade-down" data-aos-delay="200"' . $common_aos;
-    $form_aos = 'data-aos="fade" data-aos-delay="300" data-aos-duration="600"' . $common_aos;
+    $content_aos = 'data-aos="fade-up" data-aos-delay="400"' . $common_aos;
 
     ob_start(); // Start HTML buffering
 
     ?>
 
         <section class="eb-compact text-light bg-dark">
-            <div class="col-12 col-sm-11 col-md-10 col-lg-9 d-flex py-5 px-3 m-auto">
+            <div class="col-12 col-sm-11 col-md-10 col-lg-9 d-flex py-3 py-md-4 py-lg-5 px-3 m-auto">
                 <div class="wrap container col-12 col-lg-10 m-auto text-center px-2">
                     <div class="symbol d-flex mb-2" <?php echo $symbol_aos; ?>>
                         <img src="<?php echo $symbol_url; ?>" alt="" class="img-fluid symbol-img m-auto">
@@ -39,7 +39,7 @@ function render_block_compact($attributes, $content) {
                             <?php echo $subtitle; ?>
                         </h2>
                     </div> -->
-                    <div class="content text-break pt-2" <?php echo $form_aos; ?>>
+                    <div class="content text-break pt-2" <?php echo $content_aos; ?>>
                         <?php echo $content; ?>
                         <!-- <form>
                             <div class="input-group">

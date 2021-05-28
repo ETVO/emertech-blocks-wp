@@ -6,7 +6,7 @@
     .brand {
 
         .brand-img {
-            width: 300px;
+            max-width: 300px;
             height: auto;
         }
     }
@@ -15,6 +15,18 @@
         .shortcode {
             form {
 
+            }
+        }
+    }
+}
+
+@media all and (max-width: 992px) {
+    .eb-stripe {
+    
+        .brand {
+    
+            .brand-img {
+                max-width: 150px;
             }
         }
     }

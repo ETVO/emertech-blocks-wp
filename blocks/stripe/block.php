@@ -22,12 +22,12 @@ function render_block_stripe($attributes) {
     ?>
 
         <section class="eb-stripe text-light">
-            <div class="d-flex ps-0 pb-0 pt-5">
-                <div class="brand m-0 mt-auto" <?php echo $brand_aos; ?>>
+            <div class="d-flex px-3 py-4 px-md-0 pb-md-0 pt-md-4">
+                <div class="brand m-0 mt-auto d-none d-md-block" <?php echo $brand_aos; ?>>
                     <img src="<?php echo $brand_url; ?>" alt="" class="brand-img">
                 </div>
-                <div class="container p-5">
-                    <div class="content col-12 col-lg-10 pb-5 ps-3">
+                <div class="container p-2 p-md-4 p-lg-5">
+                    <div class="content col-12 col-lg-10 pb-md-4 ps-md-3">
                         <div class="title text-uppercase" <?php echo $title_aos; ?>>
                             <h2>
                                 <?php echo $title; ?> 
