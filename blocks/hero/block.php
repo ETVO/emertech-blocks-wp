@@ -22,7 +22,7 @@ function render_block_hero($attributes)
 
     ?>
 
-        <section class="eb-hero d-flex flex-row p-4 px-md-0 pt-md-0" style="background-image: url('<?php echo $bg_image_url; ?>');">
+        <section class="eb-hero d-flex flex-row pb-4 px-2 px-md-0 pt-md-0" style="background-image: url('<?php echo $bg_image_url; ?>');">
             <div class="container mt-auto text-light pb-2">
                 <div class="content mr-auto col-12 col-md-9 col-lg-6">
                     <div class="title text-uppercase" 
