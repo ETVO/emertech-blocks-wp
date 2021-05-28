@@ -2,7 +2,7 @@
     "slug": "stripe",
     "title": "Stripe",
     "desc": "Faixa de conteúdo que direciona o usuário a outra página do site",
-    "icon": " fas fa-heading text-primary",
+    "icon": " bi bi-card-heading text-primary",
     "categ": "emertechblock",
     "attrs": {
         

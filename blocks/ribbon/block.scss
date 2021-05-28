@@ -24,18 +24,6 @@ $margin: $rounded_height;
                 background-color: transparent !important;
                 color: white !important;
 
-                &::after {
-                    background-image: unset !important;
-                    flex-shrink: 0;
-                    font-size: $icon-width;
-                    margin-left: auto;
-                    margin-right: 10px;
-                    content: "\f078";
-                    font-family: "Font Awesome 5 Free";
-                    font-weight: 900;
-                    transition: transform .2s ease-in-out;
-                }
-
                 &:focus, &:active {
                     border: unset;
                     box-shadow: unset;

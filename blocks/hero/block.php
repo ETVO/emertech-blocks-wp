@@ -42,7 +42,7 @@ function render_block_hero($attributes)
                     <div class="action text-uppercase" 
                     <?php echo $btn_aos; ?> >
                         <a 
-                        class="eb_link light" 
+                        class="eb-link light" 
                         href="<?php echo $btn_url; ?>" 
                         target="<?php echo $btn_target; ?>">
                             <?php echo $btn_text; ?>  

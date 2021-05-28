@@ -56,7 +56,7 @@ export default class SaveDisplay extends Component {
 
                                 <div class="action text-uppercase ">
                                     <a 
-                                    class="eb_link text-primary fs-5" 
+                                    class="eb-link text-primary fs-5" 
                                     href={ btnUrl } 
                                     target={ btn_target }>
                                         { btnText }  

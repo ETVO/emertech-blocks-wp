@@ -2,7 +2,7 @@
     "slug": "display",
     "title": "Display",
     "desc": "Exibição de uma especialidade ou área da empresa",
-    "icon": " fas fa-stream text-primary",
+    "icon": " bi bi-text-paragraph text-primary",
     "categ": "emertechblock",
     "styles": [
         

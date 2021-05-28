@@ -2,7 +2,7 @@
     "slug": "fragment",
     "title": "Fragmento",
     "desc": "Fragmento de conteúdo com ícone, título e texto",
-    "icon": " fas fa-paragraph text-primary",
+    "icon": " bi bi-paragraph text-primary",
     "categ": "emertechblock",
     "attrs": {
         

@@ -54,7 +54,7 @@ function render_block_present($attributes)
             </div>
             <div class="wrap bg-dark text-light <?php echo "text-$align"; ?>">
                 <div class="col-12 col-sm-11 col-md-10 col-lg-<?php echo $colSize ?> m-auto p-3">
-                    <div class="content col-12 col-lg-8 px-2 <?php echo "order-$text_order px-lg-$padding"; if(!$show_image_side) echo " col-lg-10"; ?>">
+                    <div class="content col-12 col-lg-8 px-2 <?php echo "order-$text_order"; if(!$show_image_side) echo " col-lg-10"; else echo " px-lg-$padding"; ?>">
                         <div class="title text-uppercase"
                         <?php echo $title_aos; ?>>
                             <h1>
@@ -79,7 +79,7 @@ function render_block_present($attributes)
                         <div class="action text-uppercase <?php if($link_text == NULL) echo "d-none"; ?>"
                         <?php echo $btn_aos; ?>>
                             <a 
-                            class="eb_link light <?php echo $link_arrow; ?> ico-lg" 
+                            class="eb-link light <?php echo $link_arrow; ?> ico-lg" 
                             href="<?php echo $link_anchor; ?>">
                                 <?php echo $link_text; ?>  
                             </a>

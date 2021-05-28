@@ -19,7 +19,7 @@ function render_block_time($attributes, $content)
         <section class="eb-time <?php echo "show-date-$show_title"; ?>">
             <div class="date" <?php echo $title_aos; ?>>
                 <h2>
-                    <i class="far fa-dot-circle"></i>
+                    <span class="icon bi bi-nut"></span>
                     <?php echo $title; ?>
                 </h2>
             </div>

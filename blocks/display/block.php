@@ -66,7 +66,7 @@ function render_block_display($attributes) {
 
                             <div class="action text-uppercase " <?php echo $btn_aos; ?>>
                                 <a 
-                                class="eb_link primary" 
+                                class="eb-link primary" 
                                 href="<?php echo $btn_url; ?>" 
                                 target="<?php echo $btn_target; ?>">
                                     <?php echo $btn_text; ?>  

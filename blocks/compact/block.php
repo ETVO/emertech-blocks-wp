@@ -1,10 +1,9 @@
 <?php
 
-function render_block_compact($attributes) {
+function render_block_compact($attributes, $content) {
     $title = $attributes['title'];
     $subtitle = $attributes['subtitle'];
     $symbol_url = $attributes['symbol'];
-    $shortcode = $attributes['shortcode'];
 
     $common_aos = ' data-aos-offset="100"';
 
@@ -35,7 +34,7 @@ function render_block_compact($attributes) {
                         </h2>
                     </div>
                     <div class="shortcode text-break" <?php echo $form_aos; ?>>
-                        <?php echo $shortcode; ?>
+                        <?php echo $content; ?>
                         <form>
                             <div class="input-group">
                                 <input type="text" class="form-control d-block w-100 my-3 mx-4 bg-dark text-light" placeholder="E-mail">

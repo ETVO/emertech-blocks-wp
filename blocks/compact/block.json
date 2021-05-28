@@ -1,8 +1,8 @@
 {
     "slug": "compact",
-    "title": "Formulário Compacto",
-    "desc": "Formulário compacto",
-    "icon": " fas fa-info text-primary",
+    "title": "Conteúdo Compacto",
+    "desc": "Conteúdo compacto",
+    "icon": " bi bi-tag-fill text-primary",
     "categ": "emertechblock",
     "attrs": {   
         "title": {
@@ -47,13 +47,11 @@
         },
         {
             "tag": "title",
-            "title": "Shortcode"
+            "title": "Conteúdo"
         },
         {
             "tag": "input",
-            "type": "text",
-            "attr": "shortcode",
-            "label": "Código do Formulário"
+            "type": "inner"
         }
     ]
 

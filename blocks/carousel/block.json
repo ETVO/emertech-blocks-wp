@@ -1,0 +1,79 @@
+{
+    "slug": "carousel",
+    "title": "Carrossel",
+    "desc": "Carrossel de imagens",
+    "icon": " bi bi-tv-fill text-primary",
+    "categ": "emertechblock",
+    "usesInner": true,
+    "attrs": {
+        "blockId": {
+            "type": "string"
+        },
+        "showControls": {
+            "type": "boolean",
+            "default": true
+        },
+        "showIndicators": {
+            "type": "boolean",
+            "default": false
+        },
+        "autoSlide": {
+            "type": "boolean",
+            "default": true
+        },
+        "slideInterval": {
+            "type": "integer",
+            "default": 5.5
+        }
+    },
+    "edit": [
+        {
+            "tag": "input",
+            "type": "text",
+            "attr": "blockId",
+            "label": "Âncora do bloco"
+        },
+        {
+            "tag": "input",
+            "type": "check",
+            "attr": "showControls",
+            "label": "Exibir controles?"
+        },
+        {
+            "tag": "input",
+            "type": "check",
+            "attr": "showIndicators",
+            "label": "Exibir indicadores?"
+        },
+        {
+            "tag": "input",
+            "type": "check",
+            "attr": "autoSlide",
+            "label": "Mudança de slide automática?"
+        },
+        {
+            "tag": "input",
+            "type": "range",
+            "attr": "slideInterval",
+            "step": 0.5,
+            "min": 1,
+            "max": 10,
+            "label": "Intervalo de cada exibição",
+            "help": "Em segundos"
+        },
+        {
+            "tag": "title",
+            "title": "Itens do Carrossel"
+        },
+        {
+            "tag": "input",
+            "blocks": [ "emertechblock/citem" ],
+            "type": "inner"
+        }
+    ],
+    "children": [
+        {
+            "path": "citem/"
+        }
+    ]
+}

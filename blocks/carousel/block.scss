@@ -1,0 +1,19 @@
+@import "./citem/block.scss";
+
+.eb-carousel {
+    
+    .carousel-indicators {
+        button {
+            background-color: var(--bs-primary);
+            // background-color: var(--bs-light);
+            height: 7px;
+            width: 7px;
+            border-radius: 50%;
+        }
+    }
+    
+    .carousel-caption {
+        // background: #00000066;
+        border-radius: 1rem;
+    }
+}

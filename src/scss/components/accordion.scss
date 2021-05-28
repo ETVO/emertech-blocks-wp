@@ -49,22 +49,20 @@ $button-icon-active: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/
                     color: $fg-color-active;
 
                     &::after {
-                        content: "\f078";
-                        font-family: "Font Awesome 5 Free";
-                        font-weight: 900;
                         transform: rotate(-180deg);
                     }
                 }
 
                 // Accordion icon
                 &::after {
-                    flex-shrink: 0;
+                    content: "\f282";
+                    font-family: bootstrap-icons;
                     font-size: $icon-width;
+
+                    flex-shrink: 0;
                     margin-left: auto;
                     margin-right: 10px;
-                    content: "\f078";
-                    font-family: "Font Awesome 5 Free";
-                    font-weight: 900;
+
                     transition: transform .2s ease-in-out;
                 }
 

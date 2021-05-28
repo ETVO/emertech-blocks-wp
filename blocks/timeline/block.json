@@ -2,7 +2,7 @@
     "slug": "timeline",
     "title": "Linha do Tempo",
     "desc": "Linha do tempo sobre a história da empresa",
-    "icon": " fas fa-dot-circle text-primary",
+    "icon": " bi bi-nut-fill text-primary",
     "categ": "emertechblock",
     "usesInner": true,
     "attrs": {
@@ -14,6 +14,13 @@
         }
     },
     "edit": [
+        {
+            "tag": "input",
+            "type": "text",
+            "attr": "anchor",
+            "label": "Âncora HTML",
+            "help": "Caso queira criar um link dentro da página"
+        },
         {
             "tag": "title",
             "title": "Título"

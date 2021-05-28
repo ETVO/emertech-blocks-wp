@@ -2,7 +2,7 @@
     "slug": "hero",
     "title": "Hero",
     "desc": "Hero da página inicial com texto e ação",
-    "icon": " fas fa-flag  text-primary",
+    "icon": " bi bi-flag-fill  text-primary",
     "categ": "emertechblock",
     "attrs": {
         "title": {

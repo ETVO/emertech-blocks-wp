@@ -99,6 +99,7 @@ class EmertechBlocksRegisterer {
         );
 
         // echo __DIR__ . '/' . $path . '/block.php' . "\n"; #just for debugging
+        // echo $render_callback . "\n"; #just for debugging
         
         include __DIR__ . '/' . $path . '/block.php';
     }

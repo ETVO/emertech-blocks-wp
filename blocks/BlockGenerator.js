@@ -19,6 +19,8 @@ import data from "./blocks.json";
     const { 
         Button, 
         TextControl, 
+        NumberControl, 
+        RangeControl, 
         TextareaControl, 
         SelectControl, 
         ResponsiveWrapper, 
@@ -64,9 +66,7 @@ import data from "./blocks.json";
             block.name = block.categ + "/" + block.slug;
 
             if(typeof block.parent != "undefined") {
-                if(!block.parent.includes('/')) {
-                    block.parent = block.categ + '/' + block.parent;
-                }
+                block.parentName = (typeof block.parent != "undefined") ? block.categ + '/' + block.parent : '';
             }
             
             const renderJSX = block.render == "JSX";
@@ -75,7 +75,7 @@ import data from "./blocks.json";
                 title: block.title,
                 description: block.desc,
                 icon: block.icon,
-                parent: block.parent,
+                parent: block.parentName,
                 category: block.categ,
     
                 attributes: block.attrs,
@@ -134,13 +134,14 @@ import data from "./blocks.json";
             this.count = 0;
 
             const blockElements = [];
+
             
             if(typeof edit !== "undefined") {
                 edit.forEach(element => {
                     if(element.tag == "title") {
                         blockElements.push(this.generateTitle(element));
                     }
-                    else if(element.tag == "input") {
+                    else if(element.tag == "input") {  
                         blockElements.push(this.generateInput(element));
                     }
                 });
@@ -223,8 +224,6 @@ import data from "./blocks.json";
             var help = element.help;
             var tagName = element.tagName;
 
-            // alert("type: " + type);
-            
 
             if(typeof tag != "undefined" && tag != "input") 
                 return null;
@@ -233,6 +232,7 @@ import data from "./blocks.json";
             if(typeof attr != "undefined" && attr.length == 0) 
                 return null;
 
+
             const { 
                 attributes, 
                 setAttributes
@@ -240,7 +240,7 @@ import data from "./blocks.json";
             
             const value = attributes[attr];
 
-            var inputContent = null;
+            var inputContent = <Fragment></Fragment>;
 
             if(type == "text") {
                 inputContent =
@@ -256,6 +256,33 @@ import data from "./blocks.json";
                         </TextControl>
                     </Fragment>;
             }
+            else if(type == "range") {
+
+                var step = element.step;
+                if(typeof step == "undefined") step = 1;
+                var min = element.min;
+                if(typeof min == "undefined") min = 0;
+                var max = element.max;
+                if(typeof max == "undefined") max = 100;
+
+                inputContent =
+                <Fragment>
+                    <TextControl
+                        type="number"
+                        label={ label }
+                        help={ help }
+                        value={ value }
+                        onChange={ (value) => {
+                            setAttributes({[attr]: value});
+                        } }
+                        step={ step }
+                        min={ min }
+                        max={ max }
+                    >
+                    </TextControl>
+                </Fragment>;
+
+            }
             else if(type == "rich") {
 
                 inputContent = 
@@ -263,7 +290,7 @@ import data from "./blocks.json";
                         <BaseControl
                         label={ label }
                         help={ help }>
-                            &nbsp;<i class="fas fa-pencil-alt"></i>
+                            &nbsp;<i class="bi bi-pencil-fill"></i>
                             <RichText
                                 tagName={ tagName }
                                 value={ value }

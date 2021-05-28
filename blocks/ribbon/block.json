@@ -2,7 +2,7 @@
     "slug": "ribbon",
     "title": "Fita",
     "desc": "Fita de conteúdo com título e texto",
-    "icon": " fas fa-ribbon text-primary",
+    "icon": " bi bi-caret-down-square-fill text-primary",
     "categ": "emertechblock",
     "attrs": {
         

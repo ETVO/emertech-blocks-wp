@@ -1,0 +1,53 @@
+{
+    "slug": "citem",
+    "title": "Item Carrossel",
+    "desc": "Item do Carrossel com imagem, e legenda opcional",
+    "icon": " bi bi-tv text-primary",
+    "categ": "emertechblock",
+    "parent": "carousel",
+    "usesInner": true,
+    "attrs": {
+        "image": {
+            "type": "string"
+        },
+        "showCaption": {
+            "type": "boolean"
+        },
+        "title": {
+            "type": "string"
+        },
+        "text": {
+            "type": "string"
+        }
+    },
+    "edit": [
+        {
+            "tag": "input",
+            "type": "image",
+            "attr": "image",
+            "label": "Imagem"
+        },
+        {
+            "tag": "title",
+            "title": "Título e conteúdo"
+        },
+        {
+            "tag": "input",
+            "type": "check",
+            "attr": "showCaption",
+            "label": "Exibir Legenda?"
+        },
+        {
+            "tag": "input",
+            "type": "text",
+            "attr": "title",
+            "label": "Título"
+        },
+        {
+            "tag": "input",
+            "type": "rich",
+            "attr": "text",
+            "label": "Conteúdo"
+        }
+    ]
+}

@@ -2,7 +2,7 @@
     "slug": "present",
     "title": "Apresentação",
     "desc": "Apresentação da página Sobre",
-    "icon": " fas fa-eye text-primary",
+    "icon": " bi bi-eye-fill text-primary",
     "categ": "emertechblock",
     "attrs": {
         "title1": {
