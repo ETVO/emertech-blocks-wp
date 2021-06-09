@@ -6,6 +6,9 @@
     "categ": "emertechblock",
     "usesInner": true,
     "attrs": {
+        "anchor": {
+            "type": "string"
+        },
         "title": {
             "type": "string"
         },

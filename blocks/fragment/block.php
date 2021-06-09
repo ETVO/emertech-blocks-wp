@@ -1,10 +1,11 @@
 <?php
 
 function render_block_fragment($attributes) {
+    $anchor = $attributes['anchor'];
+    
     $figure_url = $attributes['figure'];
     $title = $attributes['title'];
     $text = $attributes['text'];
-    $anchor = $attributes['anchor'];
 
     $common_aos = ' data-aos-offset="100"';
 
