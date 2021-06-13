@@ -2,7 +2,7 @@
     "slug": "time",
     "title": "Seção Linha do Tempo",
     "desc": "Nova seção da Linha do Tempo",
-    "icon": " fas fa-dot-circle text-primary",
+    "icon": " bi bi-nut text-primary",
     "categ": "emertechblock",
     "parent": "timeline",
     "usesInner": true,

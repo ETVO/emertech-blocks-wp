@@ -52,18 +52,20 @@ $primary: var(--bs-primary);
         }
     }
 
-    .wrap {
+    .bottom-part {
+        .bottom-wrap {
 
-        .content {
-            z-index: 3;
-    
-            .title {
-                h1 {
-                    span {
-                        display: inline-block;
-                        padding: 0px 5px;
-                        background-color: $primary;
-                        border-radius: 3px;
+            .content {
+                z-index: 3;
+        
+                .title {
+                    h1 {
+                        span {
+                            display: inline-block;
+                            padding: 0px 5px;
+                            background-color: $primary;
+                            border-radius: 3px;
+                        }
                     }
                 }
             }
@@ -75,7 +77,7 @@ $primary: var(--bs-primary);
         .image-top {
             display: block;
         }
-        .wrap {
+        .bottom-wrap {
             .content {
                 margin-top: -2.25rem;
             }
@@ -84,7 +86,7 @@ $primary: var(--bs-primary);
     }
 
     &.show-image-side-0 {
-        .wrap {
+        .bottom-wrap {
             .content {
                 margin-left: auto;
                 margin-right: auto;

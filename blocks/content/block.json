@@ -1,0 +1,32 @@
+{
+    "slug": "content",
+    "title": "Conteúdo",
+    "desc": "Bloco para formatação de todo tipo de conteúdo",
+    "icon": " bi bi-easel-fill text-primary",
+    "categ": "emertechblock",
+    "usesInner": true,
+    "attrs": {
+        
+        "anchor": {
+            "type": "string"
+        }
+    },
+    "edit": [
+        {
+            "tag": "input",
+            "type": "text",
+            "attr": "anchor",
+            "label": "Âncora HTML",
+            "help": "Caso queira criar um link dentro da página"
+        },
+        {
+            "tag": "title",
+            "title": "Conteúdo"
+        },
+        {
+            "tag": "input",
+            "type": "inner"
+        }
+    ]
+
+}

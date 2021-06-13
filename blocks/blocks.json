@@ -28,6 +28,9 @@
         },
         {
             "path": "./carousel/"
+        },
+        {
+            "path": "./content/"
         }
     ]
 }
