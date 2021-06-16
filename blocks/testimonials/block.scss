@@ -1,0 +1,33 @@
+@import 'testimonial/block.scss';
+
+.eb-testimonials {
+    .carousel-control {
+        &-prev,
+        &-next {
+          width: 5%; 
+        }
+
+        // &-prev {
+        //     left: -5%;
+        // }
+        // &-next {
+        //     right: -5%;
+        // }
+    }
+
+    .carousel-indicators {
+        margin-bottom: 0;
+
+        button {
+            background-color: var(--bs-secondary);
+            // background-color: var(--bs-light);
+            height: 7px;
+            width: 7px;
+            border-radius: 50%;
+
+            &.active {
+                background-color: var(--bs-primary);
+            }
+        }
+    }
+}

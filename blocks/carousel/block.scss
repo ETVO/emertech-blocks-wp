@@ -4,11 +4,15 @@
     
     .carousel-indicators {
         button {
-            background-color: var(--bs-primary);
+            background-color: var(--bs-secondary);
             // background-color: var(--bs-light);
             height: 7px;
             width: 7px;
             border-radius: 50%;
+
+            &.active {
+                background-color: var(--bs-primary);
+            }
         }
     }
     

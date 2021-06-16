@@ -1,0 +1,72 @@
+{
+    "slug": "testimonial",
+    "title": "Testemunho",
+    "desc": "Nova seção da Linha do Tempo",
+    "icon": " bi bi-chat-square-quote text-primary",
+    "categ": "emertechblock",
+    "parent": "timeline",
+    "usesInner": true,
+    "attrs": {
+        "rating": {
+            "type": "number"
+        },
+        "message": {
+            "type": "string"
+        },
+        "author": {
+            "type": "string"
+        },
+        "picture": {
+            "type": "string"
+        },
+        "showPicture": {
+            "type": "boolean"
+        }
+    },
+    "edit": [
+        {
+            "tag": "title",
+            "title": "Autor, mensagem e avaliação"
+        },
+        {
+            "tag": "input",
+            "type": "text",
+            "attr": "author",
+            "label": "Nome da Pessoa ou Empresa"
+        },
+        {
+            "tag": "input",
+            "type": "rich",
+            "attr": "message",
+            "label": "Testemunho",
+            "tagName": "p"
+        },
+        {
+            "tag": "input",
+            "type": "range",
+            "attr": "rating",
+            "label": "Avaliação",
+            "min": "1",
+            "max": "5",
+            "beforeIcon": "bi bi-star",
+            "afterIcon": "bi bi-star-fill",
+            "value": 5
+        },
+        {
+            "tag": "title",
+            "title": "Imagem"
+        },
+        {
+            "tag": "input",
+            "type": "image",
+            "attr": "picture",
+            "label": "Foto"
+        },
+        {
+            "tag": "input",
+            "type": "check",
+            "attr": "showPicture",
+            "label": "Exibir foto?"
+        }
+    ]
+}

@@ -1,0 +1,64 @@
+{
+    "slug": "testimonials",
+    "title": "Testemunhos",
+    "desc": "Testemunhos de clientes e parceiros da Empresa",
+    "icon": " bi bi-chat-square-quote-fill text-primary",
+    "categ": "emertechblock",
+    "usesInner": true,
+    "attrs": {
+        "anchor": {
+            "type": "string"
+        },
+        "title": {
+            "type": "string"
+        },
+        "showTitle": {
+            "type": "boolean"
+        },
+        "autoSlide": {
+            "type": "boolean"
+        }
+    },
+    "edit": [
+        {
+            "tag": "input",
+            "type": "check",
+            "attr": "autoSlide",
+            "label": "Mudança de slide automática?"
+        },
+        {
+            "tag": "input",
+            "type": "text",
+            "attr": "anchor",
+            "label": "Âncora HTML",
+            "help": "Caso queira criar um link dentro da página"
+        },
+        {
+            "tag": "title",
+            "title": "Título"
+        },
+        {
+            "tag": "input",
+            "type": "check",
+            "attr": "showTitle",
+            "label": "Exibir título"
+        },
+        {
+            "tag": "input",
+            "type": "text",
+            "attr": "title",
+            "label": "Título"
+        },
+        {
+            "tag": "input",
+            "type": "inner",
+            "blocks": [ "emertechblock/testimonial" ],
+            "label": "Blocos"
+        }
+    ],
+    "children": [
+        {
+            "path": "testimonial/"
+        }
+    ]
+}

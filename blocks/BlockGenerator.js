@@ -238,7 +238,7 @@ import data from "./blocks.json";
                 setAttributes
             } = this.props;
             
-            const value = attributes[attr];
+            const value = attributes[attr] ?? element.value;
 
             var inputContent = <Fragment></Fragment>;
 
@@ -256,7 +256,7 @@ import data from "./blocks.json";
                         </TextControl>
                     </Fragment>;
             }
-            else if(type == "range") {
+            else if(type == "number") {
 
                 var step = element.step;
                 if(typeof step == "undefined") step = 1;
@@ -280,6 +280,57 @@ import data from "./blocks.json";
                         max={ max }
                     >
                     </TextControl>
+                </Fragment>;
+
+            }
+            else if(type == "range") {
+
+                var step = element.step;
+                if(typeof step == "undefined") step = 1;
+                var min = element.min;
+                if(typeof min == "undefined") min = 0;
+                var max = element.max;
+                if(typeof max == "undefined") max = 100;
+                
+                var withInputField = element.withInputField;
+                if(typeof withInputField == "undefined") withInputField = true;
+
+                var beforeIcon = element.beforeIcon;
+                var afterIcon = element.afterIcon;
+                
+                var marks = element.marks;
+                if(typeof marks == "undefined") {
+                    marks = [
+                        {
+                            value: min,
+                            label: min.toString()
+                        },
+                        {
+                            value: max,
+                            label: max.toString()
+                        },
+                    ];
+                }
+
+                inputContent =
+                <Fragment>
+                    <RangeControl
+                        type="number"
+                        label={ label }
+                        help={ help }
+                        value={ value }
+                        onChange={ (value) => {
+                            setAttributes({[attr]: value});
+                        } }
+                        step={ step }
+                        min={ min }
+                        max={ max }
+                        withInputField={ withInputField }
+                        beforeIcon={ beforeIcon }
+                        afterIcon={ afterIcon }
+                        marks={ marks }
+                    >
+                    </RangeControl>
                 </Fragment>;
 
             }

@@ -40,11 +40,11 @@ function render_block_carousel($attributes, $content)
             
             <button class="carousel-control-prev" type="button" data-bs-target="#<?php echo $block_id; ?>" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden"><?php echo __("Anterior", "emertech"); ?></span>
+                <span class="visually-hidden"><?php echo __("Anterior"); ?></span>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#<?php echo $block_id; ?>" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden"><?php echo __("Próximo", "emertech"); ?></span>
+                <span class="visually-hidden"><?php echo __("Próximo"); ?></span>
             </button>
         </section>
 
