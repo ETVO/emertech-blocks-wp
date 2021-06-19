@@ -1,3 +1,6 @@
-// import "../blocks/hero/block"; 
+/**
+ * Import blocks scripts 
+ */
+
 import "../../blocks/BlockGenerator";
 import "./components.js";

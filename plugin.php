@@ -4,10 +4,10 @@
  * Description: Blocos de layout criados exclusivamente para o site da Emertech
  * Author: Estevão Rolim
  * Author URI: https://www.linkedin.com/in/estevaoprolim/
- * Version: 1.0
+ * Version: 2.0
  * 
  * @package Emertech Blocks Plugin
- * @since 1.1
+ * @since 2.0
  */
 
 // Exit if accessed directly.
@@ -71,7 +71,7 @@ final class Emertech_Blocks_Plugin {
     /**
 	 * Include files
 	 *
-	 * @since 1.0.0oceanwp_has_setup
+	 * @since 1.0
 	 */
 	public static function plugin_setup() {
 

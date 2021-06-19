@@ -1,7 +1,18 @@
+/**
+ * Accordion scripts to animate show and collapse 
+ * 
+ * @package Emertech Blocks Plugin
+ */
+
 (jQuery)(
     function($) {
 
-        $(document.body).click(function(e) {
+        /**
+         * Toggle accordion according to document.body click
+         * 
+         * @since 2.0
+         */
+        toggleAccordion = (e) => {
             var $elem = $(e.target); 
             var hasClass = $elem.hasClass("accordion-button");
             var $parents = $elem.parents(".accordion-button");
@@ -42,39 +53,13 @@
                     }
                 }
             }
-
-            // $(".accordion-button").unbind().each(function(i) {
-            //     $(this).click(() => {
-            //         if($(this).data('toggle') == "collapse") {
-            //             var target = $(this).data('target');
-
-            //             const delay = 400;
-
-            //             if($(target).hasClass('show')) {
-            //                 $(this).addClass('collapsed');
-
-            //                 $(target).animate({
-            //                     display: "none",
-            //                     height: "toggle"
-            //                 }, delay, () => {
-            //                     $(target).removeClass('show');
-            //                 });
-
-            //             }
-            //             else {
-            //                 $(this).removeClass('collapsed');
-
-            //                 $(target).animate({
-            //                     display: "block",
-            //                     height: "toggle"
-            //                 }, delay, () => {
-            //                     $(target).addClass('show');
-            //                 });
-
-            //             }
-            //         }
-            //     });
-            // });
-        });
+        }
+        
+        /** 
+         * Bind document.body click event to toggleAccordion function
+         * 
+         * @since 2.0
+         */
+        $(document.body).click(toggleAccordion);
     }
 );

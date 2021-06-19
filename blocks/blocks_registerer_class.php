@@ -1,23 +1,24 @@
 <?php
 /**
- * Import PHP initializing files for all blocks
+ * Automatic PHP block initializer based on JSON files
  * 
  * @package Emertech Blocks Plugin
- * @since 1.1
  */
 
 use EmertechBlocksRegisterer as GlobalEmertechBlocksRegisterer;
 
-// include __DIR__ . "/hero/block.php";
-
+/**
+ * Emertech Blocks Registerer class
+ * @since 2.0
+ */
 class EmertechBlocksRegisterer {
 
-    private $blocks = [];
+    private array $blocks = [];
 
     /**
      * Call core functions
      *
-     * @since 1.1
+     * @since 2.0
      */
     public function __construct() {
         // Get all the blocks in the JSON file
@@ -30,6 +31,7 @@ class EmertechBlocksRegisterer {
      * Get blocks blocks from JSON file
      *
      * @param string $file_path
+     * @since 2.0
      */
     public function set_blocks_from_JSON(string $file_path) {
         $content = file_get_contents(__DIR__ . '/' . $file_path);
@@ -38,13 +40,13 @@ class EmertechBlocksRegisterer {
     }
 
     /**
-     * Register an array of blocks' paths 
+     * Register an array of blocks and its children (recursively) 
      *
      * @param array $blocks
      * @param string $path_prefix
-     * @return void
+     * @since 2.0
      */
-    public function register_blocks($blocks, $path_prefix = "") {
+    public function register_blocks(array $blocks, string $path_prefix = "") {
         $dir = __DIR__ . '/';
 
         foreach($blocks as $block) {
@@ -64,26 +66,21 @@ class EmertechBlocksRegisterer {
             $this->register_block($slug, $categ, $path_prefix . $path, $render_callback);
 
             if($children !== NULL && count($children) > 0) {
-                
-                // $blockData = file_get_contents($dir . $path_prefix . $path . $blockData["children"][0]["path"] . 'block.json');
-                // $blockData = json_decode($blockData, true);
-
-                // print_r($blockData);
-                
                 $this->register_blocks($blockData["children"], $path_prefix . $path );
             }
         }
     }
 
     /**
-     * Register individual block type
+     * Register an individual block
      *
      * @param string $slug
      * @param string $categ
      * @param string $path
      * @param string $render_callback
+     * @since 2.0
      */
-    private function register_block($slug, $categ, $path, $render_callback = NULL) {
+    private function register_block(string $slug, string $categ, string $path, string $render_callback = NULL) {
         $slug = str_replace('-', '_', $slug);
 
         if($render_callback === NULL)
@@ -92,28 +89,29 @@ class EmertechBlocksRegisterer {
         register_block_type(
             $categ . '/' . $slug,
             array(
-                'render_callback' => $render_callback,
-                // 'editor_style' => 'emertech-admin-bs',
-                // 'editor_script' => 'emertech-admin-bs-script'
+                'render_callback' => $render_callback
             )
         );
-
-        // echo __DIR__ . '/' . $path . '/block.php' . "\n"; #just for debugging
-        // echo $render_callback . "\n"; #just for debugging
         
         include __DIR__ . '/' . $path . '/block.php';
     }
 
     /**
-     * Set blocks array
+     * Set blocks property
      *
      * @param array $array
-     * @since 1.1
+     * @since 2.0
      */
     public function set_blocks(array $array) {
         $this->blocks = $array;
     }
 
+    /**
+     * Get blocks property
+     *
+     * @return array
+     * @since 2.0
+     */
     public function get_blocks(): array {
         return $this->blocks;
     }

@@ -1,25 +1,42 @@
+/** 
+ * Front-end scripts
+ * 
+ * @package Emertech Blocks Plugin
+ */
+
 (jQuery)(
     function($) {
 
-        // get all SVG objects in the DOM
-        var svgs = document.getElementsByTagName("svg");
+        /**
+         * Set SVG view box to clear white space 
+         * 
+         * @since 1.0
+         */
+        function setSVGViewBox() {
+            // Get all SVG objects in the DOM
+            var svgs = document.getElementsByTagName("svg");
 
-        // go through each one and add a viewbox that ensures all children are visible
-        for (var i=0, l=svgs.length; i<l; i++) {
+            // Go through each one and add a viewbox that ensures all children are visible
+            for (var i=0, l=svgs.length; i<l; i++) {
 
-            var svg = svgs[i],
-                box = svg.getBBox(), // <- get the visual boundary required to view all children
-                viewBox = [box.x, box.y, box.width, box.height].join(" ");
+                var svg = svgs[i],
+                    box = svg.getBBox(), // Get the visual boundary required to view all children
+                    viewBox = [box.x, box.y, box.width, box.height].join(" ");
 
-            // set viewable area based on value above
-            svg.setAttribute("viewBox", viewBox);
+                // Set viewable area based on value above
+                svg.setAttribute("viewBox", viewBox);
+            }
         }
 
-        $(document.body).ready(function (){
-            $(".carousel-item").each(function(i) {
-            });
-
+        /**
+         * Generate .carousel-indicators buttons for each .carousel
+         * 
+         * @since 2.0
+         */
+        function generateCarouselIndicators() {
             $(".carousel").each(function() {
+                if($(this).find(".carousel-indicators")) return;
+
                 var $items = $(this).find(".carousel-item");
 
                 var carouselId = $(this).attr("id");
@@ -51,6 +68,14 @@
 
                 $(this).append(indicators);
             })
+        }
+
+        /**
+         * Invocate functions when document.body is ready 
+         */
+        $(document.body).ready(function (){
+            setSVGViewBox();
+            generateCarouselIndicators();
         });
     }
 )

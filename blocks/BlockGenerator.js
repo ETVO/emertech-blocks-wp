@@ -1,3 +1,9 @@
+/**
+ * Automatic block generator based on JSON files 
+ *  
+ * @package Emertech Blocks Plugin
+ */
+
 import data from "./blocks.json";
 
 (function (wp) {
@@ -34,6 +40,11 @@ import data from "./blocks.json";
     var blocks = [];
     var i = 0;
 
+    /**
+     * Block Generator class
+     * 
+     * @since 2.0
+     */
     class BlockGenerator {
         constructor(data) {
 
@@ -99,6 +110,11 @@ import data from "./blocks.json";
 
     var block = null;
 
+    /**
+     * Dynamic React Component class
+     * 
+     * @since 2.0 
+     */
     class CustomEdit extends Component { 
 
         render() {
