@@ -29,7 +29,7 @@ function render_block_ribbon($attributes)
     
         <div class="top-part">
             <?php if($style == "rounded"): ?>
-                <img src="<?php echo EMERTECH_PLUGIN_IMG_URL . 'top.svg'; ?>" alt="">
+                <img src="<?php echo EMERTECH_BLOCKS_IMG_URL . 'top.svg'; ?>" alt="">
             <?php endif; ?>
         </div>
 
@@ -62,7 +62,7 @@ function render_block_ribbon($attributes)
 
         <div class="bottom-part">
             <?php if($style == "rounded"): ?>
-                <img src="<?php echo EMERTECH_PLUGIN_IMG_URL . 'bottom.svg'; ?>" alt="">
+                <img src="<?php echo EMERTECH_BLOCKS_IMG_URL . 'bottom.svg'; ?>" alt="">
             <?php endif; ?>
         </div>
         

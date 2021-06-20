@@ -7,7 +7,6 @@
  * Version: 2.0
  * 
  * @package Emertech Blocks Plugin
- * @since 2.0
  */
 
 // Exit if accessed directly.
@@ -16,9 +15,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Core constants 
-define("EMERTECH_PLUGIN_DIR", plugin_dir_path(__DIR__));
-define("EMERTECH_PLUGIN_URL", plugins_url("emertech-blocks/"));
-define("EMERTECH_PLUGIN_CLASS_NAME", "Emertech_Blocks_Plugin");
+define("EMERTECH_BLOCKS_DIR", plugin_dir_path(__DIR__) . "emertech-blocks/");
+define("EMERTECH_BLOCKS_URL", plugins_url("emertech-blocks/"));
+define("EMERTECH_BLOCKS_CLASS_NAME", "Emertech_Blocks_Plugin");
 
 /** 
  * Emertech Blocks plugin class
@@ -27,6 +26,7 @@ final class Emertech_Blocks_Plugin {
 
     /**
      * Add actions and filters, and call functions
+     * 
      * @since 1.0
      */
     public function __construct() {
@@ -34,17 +34,17 @@ final class Emertech_Blocks_Plugin {
         $this->plugin_constants();
         
         // Initialize blocks PHP
-        add_action('init', array(EMERTECH_PLUGIN_CLASS_NAME, 'plugin_setup'));
+        add_action('init', array(EMERTECH_BLOCKS_CLASS_NAME, 'plugin_setup'));
 
         // Enqueue scripts on init        
-        add_action('wp_enqueue_scripts', array(EMERTECH_PLUGIN_CLASS_NAME, 'plugin_css'));
-        add_action('wp_enqueue_scripts', array(EMERTECH_PLUGIN_CLASS_NAME, 'plugin_js'));
+        add_action('wp_enqueue_scripts', array(EMERTECH_BLOCKS_CLASS_NAME, 'plugin_css'));
+        add_action('wp_enqueue_scripts', array(EMERTECH_BLOCKS_CLASS_NAME, 'plugin_js'));
 
-        add_action('admin_enqueue_scripts', array(EMERTECH_PLUGIN_CLASS_NAME, 'plugin_admin_css'));
-        add_action('admin_enqueue_scripts', array(EMERTECH_PLUGIN_CLASS_NAME, 'plugin_admin_js'));
+        add_action('admin_enqueue_scripts', array(EMERTECH_BLOCKS_CLASS_NAME, 'plugin_admin_css'));
+        add_action('admin_enqueue_scripts', array(EMERTECH_BLOCKS_CLASS_NAME, 'plugin_admin_js'));
 
         // Filter to add custom block category
-        add_filter( 'block_categories', array(EMERTECH_PLUGIN_CLASS_NAME, 'custom_blocks_category'), 10, 2);
+        add_filter( 'block_categories', array(EMERTECH_BLOCKS_CLASS_NAME, 'custom_blocks_category'), 10, 2);
 
         // $this->include_blocks();
     }
@@ -57,14 +57,15 @@ final class Emertech_Blocks_Plugin {
     public function plugin_constants() {
 
         // JS and CSS paths
-        define('EMERTECH_PLUGIN_JS_URL', EMERTECH_PLUGIN_URL . 'assets/js/');
-        define('EMERTECH_PLUGIN_CSS_URL', EMERTECH_PLUGIN_URL . 'assets/css/');
+        define('EMERTECH_BLOCKS_JS_URL', EMERTECH_BLOCKS_URL . 'assets/js/');
+        define('EMERTECH_BLOCKS_CSS_URL', EMERTECH_BLOCKS_URL . 'assets/css/');
 
         // Include paths
-        define('EMERTECH_PLUGIN_INC_URL', EMERTECH_PLUGIN_URL . 'inc/');
+        define('EMERTECH_BLOCKS_INC_DIR', EMERTECH_BLOCKS_DIR . 'blocks/');
+        define('EMERTECH_BLOCKS_INC_URL', EMERTECH_BLOCKS_URL . 'blocks/');
 
         // Image paths
-        define('EMERTECH_PLUGIN_IMG_URL', EMERTECH_PLUGIN_URL . 'assets/img/');
+        define('EMERTECH_BLOCKS_IMG_URL', EMERTECH_BLOCKS_URL . 'assets/img/');
         
     }
 
@@ -73,11 +74,11 @@ final class Emertech_Blocks_Plugin {
 	 *
 	 * @since 1.0
 	 */
-	public static function plugin_setup() {
+	public function plugin_setup() {
 
-		$dir = __DIR__;
+		$dir = EMERTECH_BLOCKS_INC_DIR;
 
-		include $dir . '/blocks/blocks_registerer_class.php';
+		include $dir . '/blocks-registerer.php';
 	}
 
     /**
@@ -87,7 +88,7 @@ final class Emertech_Blocks_Plugin {
      */
     public function plugin_css() {
 
-        $dir = EMERTECH_PLUGIN_CSS_URL;
+        $dir = EMERTECH_BLOCKS_CSS_URL;
 
         // Registering the blocks.css for frontend + backend
         wp_enqueue_style(
@@ -105,7 +106,7 @@ final class Emertech_Blocks_Plugin {
      */
     public function plugin_js() {
 
-        $dir = EMERTECH_PLUGIN_JS_URL;
+        $dir = EMERTECH_BLOCKS_JS_URL;
 
         // Registering the blocks.js file in the dist folder
         wp_enqueue_script(
@@ -125,7 +126,7 @@ final class Emertech_Blocks_Plugin {
      */
     public function plugin_admin_css() {
 
-        $dir = EMERTECH_PLUGIN_CSS_URL;
+        $dir = EMERTECH_BLOCKS_CSS_URL;
 
         // Registering the editor.css for backend
         wp_enqueue_style(
@@ -143,7 +144,7 @@ final class Emertech_Blocks_Plugin {
      */
     public function plugin_admin_js() {
 
-        $dir = EMERTECH_PLUGIN_JS_URL;
+        $dir = EMERTECH_BLOCKS_JS_URL;
 
         // Registering the blocks.js file in the dist folder
         wp_enqueue_script(
@@ -159,8 +160,8 @@ final class Emertech_Blocks_Plugin {
             'emertech-blocks-scripts',
             'pluginGlobal',
             [
-                'dirPath' => EMERTECH_PLUGIN_DIR,
-                'dirUrl'  => EMERTECH_PLUGIN_URL,
+                'dirPath' => EMERTECH_BLOCKS_DIR,
+                'dirUrl'  => EMERTECH_BLOCKS_URL,
                 'homeUrl' => home_url(),
             ]
         );
@@ -181,15 +182,6 @@ final class Emertech_Blocks_Plugin {
             ),
             $categories
         );
-    }
-
-    /**
-     * Include Emertech Blocks Registerer class
-     *
-     * @since 1.0
-     */
-    public function include_blocks() {
-        include __DIR__ . '/blocks/blocks_registerer_class.php';
     }
 }
 
