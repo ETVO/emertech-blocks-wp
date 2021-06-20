@@ -54,7 +54,7 @@ final class Emertech_Blocks_Plugin {
      * 
      * @since 1.0
      */
-    public function plugin_constants() {
+    public static function plugin_constants() {
 
         // JS and CSS paths
         define('EMERTECH_BLOCKS_JS_URL', EMERTECH_BLOCKS_URL . 'assets/js/');
@@ -74,7 +74,7 @@ final class Emertech_Blocks_Plugin {
 	 *
 	 * @since 1.0
 	 */
-	public function plugin_setup() {
+	public static function plugin_setup() {
 
 		$dir = EMERTECH_BLOCKS_INC_DIR;
 
@@ -86,7 +86,7 @@ final class Emertech_Blocks_Plugin {
      * 
      * @since 1.0
      */
-    public function plugin_css() {
+    public static function plugin_css() {
 
         $dir = EMERTECH_BLOCKS_CSS_URL;
 
@@ -104,7 +104,7 @@ final class Emertech_Blocks_Plugin {
      * 
      * @since 1.0
      */
-    public function plugin_js() {
+    public static function plugin_js() {
 
         $dir = EMERTECH_BLOCKS_JS_URL;
 
@@ -124,7 +124,7 @@ final class Emertech_Blocks_Plugin {
      * 
      * @since 1.0
      */
-    public function plugin_admin_css() {
+    public static function plugin_admin_css() {
 
         $dir = EMERTECH_BLOCKS_CSS_URL;
 
@@ -142,7 +142,7 @@ final class Emertech_Blocks_Plugin {
      * 
      * @since 1.0
      */
-    public function plugin_admin_js() {
+    public static function plugin_admin_js() {
 
         $dir = EMERTECH_BLOCKS_JS_URL;
 
