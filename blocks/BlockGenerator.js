@@ -13,11 +13,8 @@ import data from "./blocks.json";
     const { Component, Fragment } = wp.element;
     
     const { 
-        InspectorControls,
-        MediaUploadCheck,
         MediaUpload,
         URLInput,
-        useBlockProps,
         RichText,
         InnerBlocks,
     } = wp.blockEditor;
@@ -25,12 +22,9 @@ import data from "./blocks.json";
     const { 
         Button, 
         TextControl, 
-        NumberControl, 
         RangeControl, 
         TextareaControl, 
         SelectControl, 
-        ResponsiveWrapper, 
-        Spinner, 
         BaseControl,
         CheckboxControl
     } = wp.components;

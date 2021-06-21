@@ -172,7 +172,7 @@ final class Emertech_Blocks_Plugin {
      * 
      * @since 1.0
      */
-    function custom_blocks_category($categories, $post) {
+    public static function custom_blocks_category($categories, $post) {
         return array_merge(
             array(
                 array(
