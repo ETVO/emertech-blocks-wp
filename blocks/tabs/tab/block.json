@@ -1,0 +1,21 @@
+{
+    "slug": "tab",
+    "title": "Guia",
+    "desc": "Seção de conteúdo de bloco de guias",
+    "icon": " bi bi-card-text text-primary",
+    "categ": "emertechblock",
+    "parent": "tabs",
+    "usesInner": true,
+    "attrs": {
+    },
+    "edit": [
+        {
+            "tag": "title",
+            "title": "Conteúdo"
+        },
+        {
+            "tag": "input",
+            "type": "inner"
+        }
+    ]
+}

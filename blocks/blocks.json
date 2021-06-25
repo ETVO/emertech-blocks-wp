@@ -43,6 +43,9 @@
         },
         {
             "path": "./catalog/"
+        },
+        {
+            "path": "./tabs/"
         }
     ]
 }

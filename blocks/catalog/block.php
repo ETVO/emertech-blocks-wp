@@ -6,6 +6,11 @@ function render_block_catalog($attributes, $content)
     $post_type = $attributes['postType'];
     $use_transform = $post_type == 'transform';
 
+    $archive_label = $attributes['viewAllLabel'];
+    
+    $view_more_label = __('Ver mais sobre ');
+    $archive_link = get_post_type_archive_link( $post_type );
+    
     ob_start(); // Start HTML buffering
     $transform_exists = class_exists('Emertech_Transform_CPT');
 
@@ -29,20 +34,6 @@ function render_block_catalog($attributes, $content)
 
     // The Query
     $query = new WP_Query($args);
-
-    // The Loop
-    if ($query->have_posts()) {
-        while ($query->have_posts()) {
-            $query->the_post();
-            // do something
-        }
-    } else {
-        // no posts found
-    }
-
-    $view_more_label = __('Ver mais');
-    $view_all_label = __('Ver catálogo completo');
-
     
     if ($query->have_posts()) :
         ?>
@@ -69,26 +60,24 @@ function render_block_catalog($attributes, $content)
                         ?>
                         <div class="col p-2">
                             
-                            <div class="card bg-dark position-relative">
+                            <div class="card bg-dark position-relative clink" href="<?php echo $permalink; ?>">
 
                                 <?php if ($image_url != ''){ ?>
-                                    <img src="<?php echo $image_url; ?>" class="card-img-top" alt="<?php echo $image_alt; ?>">
+                                    <div class="image">
+                                        <img src="<?php echo $image_url; ?>" class="card-img-top" 
+                                        alt="<?php echo $image_alt; ?>">
+                                    </div>
                                 <?php } else { ?>
                                     <div class="image-placeholder"></div>
                                 <?php } ?>
 
                                     <div class="card-body">
-                                        <a href="<?php echo $permalink; ?>" class="title">
-                                            <span>
-
-                                                <h5 class="card-title"><?php echo $title; ?>
-                                            <span class="bi bi-arrow-right text-primary"></span></h5>
-                                            </span>
+                                        <a href="<?php echo $permalink; ?>" class="title eb-link after" 
+                                        aria-label="<?php echo $view_more_label . $title;  ?>">
+                                            <h5 class="d-inline-block card-title">
+                                                <?php echo $title; ?>
+                                            </h5>
                                         </a>
-
-                                        <!-- <a href="<?php echo $permalink; ?>" class="eb-link text-uppercase">
-                                            <?php echo $view_more_label; ?>
-                                        </a> -->
                                     </div>
                                 </div>
                             </div>
@@ -98,9 +87,8 @@ function render_block_catalog($attributes, $content)
                     ?>
                 </div>
                 <div class="d-flex mt-2">
-                    <a class="btn btn-primary text-uppercase m-auto" href="">
-                        <span class="bi bi-arrow-right"></span>
-                        <?php echo $view_all_label; ?>
+                    <a class="btn btn-primary text-uppercase m-auto eb-link plus light-ico" href="<?php echo $archive_link; ?>">
+                        <?php echo $archive_label; ?>
                     </a>
                 </div>
             </div>

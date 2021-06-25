@@ -479,10 +479,7 @@ import data from "./blocks.json";
                     </Fragment>;
             }
             else if(type=="inner") {
-                // const blocks = [ 'emertechblock/stripe' ];
-                const blocks = element.blocks;
-                const template = element.template ?? [];
-                var templateLock = (element.template !== '') ? element.templateLock ?? "all" : "false";
+                var blocks = element.blocks;
 
                 inputContent = 
                     <Fragment>
@@ -491,8 +488,24 @@ import data from "./blocks.json";
                         help={ help }>
                             <InnerBlocks
                                 allowedBlocks={ blocks }
-                            // template={ template }
-                            // templateLock={ templateLock }
+                            />
+                        </BaseControl>
+                    </Fragment>;
+            }
+            else if(type=="template") {
+                var blocks = element.blocks;
+                var template = element.template;
+                var templateLock = element.templateLock;
+
+                inputContent = 
+                    <Fragment>
+                        <BaseControl
+                        label={ label }
+                        help={ help }>
+                            <InnerBlocks
+                                allowedBlocks={ blocks }
+                                template={ template }
+                                templateLock={ templateLock }
                             />
                         </BaseControl>
                     </Fragment>;

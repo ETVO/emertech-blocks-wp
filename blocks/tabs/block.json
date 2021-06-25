@@ -1,0 +1,152 @@
+{
+    "slug": "tabs",
+    "title": "Guias",
+    "desc": "Guias com mais informações sobre determinado(s) tópico(s)",
+    "icon": " bi bi-segmented-nav text-primary",
+    "categ": "emertechblock",
+    "usesInner": true,
+    "attrs": {
+        "anchor": {
+            "type": "string"
+        },
+        "mainTitle": {
+            "type": "string"
+        },
+        "title1": {
+            "type": "string"
+        },
+        "hide1": {
+            "type": "string"
+        },
+        "anchor1": {
+            "type": "string"
+        },
+        "title2": {
+            "type": "string"
+        },
+        "hide2": {
+            "type": "string"
+        },
+        "anchor2": {
+            "type": "string"
+        },
+        "title3": {
+            "type": "string"
+        },
+        "hide3": {
+            "type": "string"
+        },
+        "anchor3": {
+            "type": "string"
+        }
+    },
+    "edit": [
+        {
+            "tag": "input",
+            "type": "text",
+            "attr": "anchor",
+            "label": "Âncora HTML",
+            "help": "Caso queira criar um link dentro da página"
+        },
+        {
+            "tag": "input",
+            "type": "text",
+            "attr": "mainTitle",
+            "label": "Título do bloco",
+            "help": "Deixe em branco para ocultar"
+        },
+        {
+            "tag": "title",
+            "title": "Configuração Seção 1"
+        },
+        {
+            "tag": "input",
+            "type": "text",
+            "attr": "title1",
+            "label": "Título",
+            "help": "Título a ser mostrado na guia"
+        },
+        {
+            "tag": "input",
+            "type": "text",
+            "attr": "anchor1",
+            "label": "Âncora",
+            "help": "Âncora HTML que pode ser usada para criar link na mesma página"
+        },
+        {
+            "tag": "input",
+            "type": "check",
+            "attr": "hide1",
+            "label": "Ocultar?"
+        },
+        {
+            "tag": "title",
+            "title": "Configuração Seção 2"
+        },
+        {
+            "tag": "input",
+            "type": "text",
+            "attr": "title2",
+            "label": "Título",
+            "help": "Título a ser mostrado na guia"
+        },
+        {
+            "tag": "input",
+            "type": "text",
+            "attr": "anchor2",
+            "label": "Âncora",
+            "help": "Âncora HTML que pode ser usada para criar link na mesma página"
+        },
+        {
+            "tag": "input",
+            "type": "check",
+            "attr": "hide2",
+            "label": "Ocultar?"
+        },
+        {
+            "tag": "title",
+            "title": "Configuração Seção 3"
+        },
+        {
+            "tag": "input",
+            "type": "text",
+            "attr": "title3",
+            "label": "Título",
+            "help": "Título a ser mostrado na guia"
+        },
+        {
+            "tag": "input",
+            "type": "text",
+            "attr": "anchor3",
+            "label": "Âncora",
+            "help": "Âncora HTML que pode ser usada para criar link na mesma página"
+        },
+        {
+            "tag": "input",
+            "type": "check",
+            "attr": "hide3",
+            "label": "Ocultar?"
+        },
+        {
+            "tag": "title",
+            "title": "Conteúdo"
+        },
+        {
+            "tag": "input",
+            "type": "inner",
+            "blocks": ["emertechblock/tab"],
+            "template": [
+                [ "emertechblock/tab", {} ],
+                [ "emertechblock/tab", {} ],
+                [ "emertechblock/tab", {} ]
+            ],
+            "templateLock": "all"
+        }
+    ],
+    "children": [
+        {
+            "path": "tab/"
+        }
+    ]
+
+}

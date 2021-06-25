@@ -11,6 +11,12 @@
         },
         "postType": {
             "type": "string"
+        },
+        "viewAllLabel": {
+            "type": "string"
+        },
+        "noOfPosts": {
+            "type": "integer"
         }
     },
     "edit": [
@@ -44,6 +50,21 @@
                     "label": "Transformações"
                 }
             ]
+        },
+        {
+            "tag": "input",
+            "type": "text",
+            "attr": "viewAllLabel",
+            "label": "Texto de \"Ver Todos\"",
+            "help": "Ex.: \"Ver catálogo completo\" ou \"Abrir catálogo\""
+        },
+        {
+            "tag": "input",
+            "type": "range",
+            "attr": "noOfPosts",
+            "label": "Número de posts/transformações a mostrar",
+            "min": 3,
+            "max": 8
         }
     ]
 
