@@ -151,23 +151,31 @@
         },
         {
             "tag": "input",
-            "type": "text",
+            "type": "url",
             "attr": "linkAnchor",
-            "label": "Âncora do botão"
+            "label": "URL do botão"
         },
         {
             "tag": "input",
             "type": "select",
             "attr": "linkArrow",
-            "label": "Estilo da seta",
+            "label": "Direção da seta",
             "options": [
                 {
-                    "value": "down",
-                    "label": "Apontando para baixo"
+                    "value": "right",
+                    "label": "Direita"
                 },
                 {
-                    "value": "right",
-                    "label": "Apontando para a direita"
+                    "value": "left",
+                    "label": "Esquerda"
+                },
+                {
+                    "value": "up",
+                    "label": "Cima"
+                },
+                {
+                    "value": "down",
+                    "label": "Baixo"
                 },
                 {
                     "value": "no-ico",

@@ -1,0 +1,25 @@
+.eb-transform {
+    
+    .form {
+        border: solid 1px var(--bs-secondary);
+        
+        input, textarea {
+            border: solid 1px var(--bs-secondary);
+
+            &[type="checkbox"] {
+                background-color: var(--bs-dark);
+            }
+        }
+    }
+}
+
+@media all and (min-width: 1024.1px) {
+    
+    .eb-transform {
+        
+        .form {
+            position: sticky !important;
+            top: 15px;
+        }
+    }
+}

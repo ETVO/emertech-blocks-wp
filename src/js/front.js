@@ -35,7 +35,11 @@
          */
         function generateCarouselIndicators() {
             $(".carousel").each(function() {
-                if($(this).find(".carousel-indicators")) return;
+                // Don't generate indicatos if it already has them 
+                // OR if it has them disabled 
+                if($(this).find(".carousel-indicators") 
+                || $(this).attr("data-emertech-indicators" == "false")) 
+                    return;
 
                 var $items = $(this).find(".carousel-item");
 

@@ -13,7 +13,7 @@ use EmertechBlocksRegisterer as GlobalEmertechBlocksRegisterer;
  */
 class EmertechBlocksRegisterer {
 
-    private array $blocks = [];
+    private $blocks = [];
 
     /**
      * Call core functions

@@ -1,0 +1,45 @@
+{
+    "slug": "transform",
+    "title": "Transformação",
+    "desc": "Colunas de conteúdo da página de Transformação",
+    "icon": " bi bi-layout-sidebar-inset-reverse text-primary",
+    "categ": "emertechblock",
+    "usesInner": true,
+    "attrs": {
+        "anchor": {
+            "type": "string"
+        },
+        "formTitle": {
+            "type": "string"
+        }
+    },
+    "edit": [
+        {
+            "tag": "input",
+            "type": "text",
+            "attr": "anchor",
+            "label": "Âncora HTML",
+            "help": "Caso queira criar um link dentro da página"
+        },
+        {
+            "tag": "title",
+            "title": "Conteúdo"
+        },
+        {
+            "tag": "input",
+            "type": "inner"
+        },
+        {
+            "tag": "title",
+            "title": "Formulário"
+        },
+        {
+            "tag": "input",
+            "type": "text",
+            "attr": "formTitle",
+            "label": "Título do formulário",
+            "help": "Deixe em branco para ocultar"
+        }
+    ]
+
+}

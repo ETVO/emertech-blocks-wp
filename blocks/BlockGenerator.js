@@ -210,7 +210,6 @@ import data from "./blocks.json";
             const title = element.title;
             
             if(tag != "title") return null;
-            if(title.length == 0) return null;
 
             var classes = "hr-title";
 
@@ -236,8 +235,6 @@ import data from "./blocks.json";
 
 
             if(typeof tag != "undefined" && tag != "input") 
-                return null;
-            if(typeof label != "undefined" && label.length == 0) 
                 return null;
             if(typeof attr != "undefined" && attr.length == 0) 
                 return null;
@@ -377,7 +374,7 @@ import data from "./blocks.json";
             else if(type == "image") {
                 const imageAttr = { 
                     'value': value, 
-                    'name': "background" ,
+                    'name': attr,
                     'attr': attr
                 };
 
@@ -399,6 +396,43 @@ import data from "./blocks.json";
                                 setAttributes({[attr]: media.url});
                             } }
                             render={({ open }) => this.getImageButton(open, imageAttr, imageMaxHeight, removeEvent)}
+                        />
+                    </Fragment>;
+            }
+            else if(type == "gallery") {
+                const imageAttr = { 
+                    'value': value, 
+                    'name': attr,
+                    'attr': attr
+                };
+
+                const imageMaxHeight = element.maxHeight ?? "80px";
+
+                var removeEvent = () => {
+                    setAttributes({[attr]: undefined});
+                };
+                
+                var valueIds = [];
+                if(typeof value != "undefined")
+                    valueIds = value.map((img) => img.id)
+                
+                inputContent = 
+                <Fragment>
+                        <BaseControl
+                        label={ label }>
+                        </BaseControl>
+                        <MediaUpload
+                            type="image"
+                            gallery={ true }
+                            multiple={ true }
+                            value={ valueIds }
+                            onSelect={ (images) => {
+                                images = images.map((img) => {
+                                    return {'url': img.url, 'id': img.id};
+                                });
+                                setAttributes({[attr]: images});
+                            } }
+                            render={({ open }) => this.getGalleryButton(open, imageAttr, imageMaxHeight, removeEvent)}
                         />
                     </Fragment>;
             }
@@ -488,6 +522,7 @@ import data from "./blocks.json";
                             <Button
                                 onClick={ removeEvent }
                                 isDestructive={true}
+                                style={ { borderRadius: "3px" } }
                             >
                                 { this.getRemoveImageText() }
                             </Button>
@@ -509,12 +544,82 @@ import data from "./blocks.json";
             }
         }
 
+        getGalleryButton (openEvent, attr, imageMaxHeight, removeEvent = null) {   
+            if (attr['value']) {
+                
+                var images = attr['value'];
+                var imageElements = [];
+
+                var len = images.length;
+
+                var imageStyle = { height: imageMaxHeight, 
+                    width: imageMaxHeight, 
+                    objectFit: 'cover', 
+                    marginRight: '0.5rem',
+                    borderRadius: '3px'
+                };
+
+                for(let i = 0; i < len; i++) {
+                    var url = images[i]['url'];
+
+                    imageElements.push(
+                        <img
+                        style={imageStyle}
+                        src={url}
+                        onClick={openEvent}
+                        className={block.categ + "_" + block.name + "_" + attr['name'] + ""}
+                        />
+                    );
+                }
+
+                return (
+                    [
+                        imageElements,
+                        <div className="button-container">
+                            <Button
+                                onClick={openEvent}
+                                className="button button-large select-image-btn"
+                            >
+                                { this.getEditGalleryText() }
+                            </Button>
+                            <Button
+                                onClick={ removeEvent }
+                                isDestructive={true}
+                                style={ { borderRadius: "3px" } }
+                            >
+                                { this.getClearGalleryText() }
+                            </Button>
+                        </div>
+                    ]
+                );
+            }
+            else {
+                return (
+                    <div className="button-container">
+                        <Button
+                            onClick={openEvent}
+                            className="button button-large"
+                        >
+                            { this.getEditGalleryText() }
+                        </Button>
+                    </div>
+                );
+            }
+        }
+
+        getEditGalleryText() {
+            return __("Editar galeria");
+        }
+        getClearGalleryText() {
+            return __("Limpar galeria");
+        }
+
         getSelectImageText() {
-            return __("Selecione uma Imagem");
+            return __("Selecione uma imagem");
         }
 
         getRemoveImageText() {
-            return __("Remover Imagem");
+            return __("Remover imagem");
         }
     }
 

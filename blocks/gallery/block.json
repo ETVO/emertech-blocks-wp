@@ -1,0 +1,45 @@
+{
+    "slug": "gallery",
+    "title": "Galeria",
+    "desc": "Galeria de imagens com",
+    "icon": " bi bi-images text-primary",
+    "categ": "emertechblock",
+    "attrs": {
+        "images": {
+            "type": "array"
+        },
+        "title": {
+            "type": "string"
+        },
+        "enableLightbox": {
+            "type": "boolean"
+        }
+    },
+    "edit": [
+        {
+            "tag": "input",
+            "type": "gallery",
+            "attr": "images",
+            "label": "Imagens"
+        },
+        {
+            "tag": "input",
+            "type": "check",
+            "attr": "enableLightbox",
+            "label": "Ativar Lightbox",
+            "help": "Visualização em destaque das imagens"
+        },
+        {
+            "tag": "title",
+            "title": "Conteúdo" 
+        },
+        {
+            "tag": "input",
+            "type": "text",
+            "attr": "title",
+            "label": "Título",
+            "help": "Deixar em branco para ocultar"
+        }
+    ]
+
+}

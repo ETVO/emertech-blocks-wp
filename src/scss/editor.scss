@@ -78,7 +78,7 @@ div[data-type^="emertechblock"] {
         margin-bottom: 0;
     }
 
-    .components-text-control__input {
+    .components-text-control__input, .block-editor-url-input__input {
         padding: 6px 8px;
         display: block;
         border: solid 1px #ccc !important;

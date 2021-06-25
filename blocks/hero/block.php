@@ -9,6 +9,7 @@ function render_block_hero($attributes)
     $btn_text = $attributes['btnText'];
     $btn_url = $attributes['btnUrl'];
     $btn_new_tab = $attributes['btnNewTab'];
+    $btn_arrow = $attributes['btnArrow'];
     
     $btn_target = ($btn_new_tab) ? "_blank": "_self";
     
@@ -39,15 +40,17 @@ function render_block_hero($attributes)
                         </p>
                     </div>
 
-                    <div class="action text-uppercase" 
-                    <?php echo $btn_aos; ?> >
-                        <a 
-                        class="eb-link light" 
-                        href="<?php echo $btn_url; ?>" 
-                        target="<?php echo $btn_target; ?>">
-                            <?php echo $btn_text; ?>  
-                        </a>
-                    </div>
+                    <?php if($btn_text != ""): ?>
+                        <div class="action text-uppercase" 
+                            <?php echo $btn_aos; ?> >
+                            <a class="eb-link light <?php echo $btn_arrow; ?>"
+                                href="<?php echo $btn_url; ?>" 
+                                target="<?php echo $btn_target; ?>">
+                                <?php echo $btn_text; ?>  
+                            </a>
+                        </div>
+                    <?php endif; ?>
+                    
                 </div>
             </div>
         </section>

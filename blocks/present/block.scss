@@ -78,8 +78,10 @@ $primary: var(--bs-primary);
             display: block;
         }
         .bottom-wrap {
+            padding-top: 0 !important;
+
             .content {
-                margin-top: -2.25rem;
+                margin-top: -1.2rem;
             }
 
         }

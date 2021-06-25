@@ -20,6 +20,9 @@
         "btnUrl": {
             "type": "string"
         },
+        "btnArrow": {
+            "type": "string"
+        },
         "btnNewTab": {
             "type": "boolean",
             "default": true
@@ -73,6 +76,34 @@
             "type": "check",
             "attr": "btnNewTab",
             "label": "Abrir em nova guia?"
+        },
+        {
+            "tag": "input",
+            "type": "select",
+            "attr": "btnArrow",
+            "label": "Direção da seta",
+            "options": [
+                {
+                    "value": "right",
+                    "label": "Direita"
+                },
+                {
+                    "value": "left",
+                    "label": "Esquerda"
+                },
+                {
+                    "value": "up",
+                    "label": "Cima"
+                },
+                {
+                    "value": "down",
+                    "label": "Baixo"
+                },
+                {
+                    "value": "no-ico",
+                    "label": "Ocultar seta"
+                }
+            ]
         }
     ]
 }
