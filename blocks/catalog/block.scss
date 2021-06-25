@@ -1,50 +1,58 @@
-.eb-transform {
-    
-    .form {
-        border: solid 1px var(--bs-secondary);
-        
-        input, textarea {
-            border: solid 1px var(--bs-secondary);
 
-            &[type="checkbox"] {
-                background-color: var(--bs-dark);
-            }
-        }
-    }
-}
+$background_top: rgba(#000, 0);
+$background_bottom: rgba(#000, 1);
 
-@media all and (min-width: 1024.1px) {
-    
-    .eb-transform {
-        overflow: auto;
+.eb-catalog {
 
-        .meta {
-            .optionals {
-                position: relative;
+    .card {
+        position: relative;
 
-                > .title {
-                    position: absolute;
-                    top: 0;
-                    left: .25rem;
-                    margin-top: -.75rem;
-                }
+        .image-placeholder {
+            background-color: var(--bs-secondary);
+            border-radius: inherit;
+            position: relative;
+            padding-bottom: 66.66%;
 
-                .continue {
-                    margin-top: 1rem;
-                }
-            }
-        }
-
-        .form-parent {
-            overflow: auto;
-
-            .form {
-                position: -webkit-sticky !important;
-                position: sticky !important;
+            &::after {
+                content: '';
+                width: 100%;
+                height: 100%;
                 top: 0;
+                left: 0;
+                background-color: var(--bs-primary);
             }
-
         }
         
+        .card-body {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            
+            z-index: 2;
+
+            .title {
+
+                &:hover, &:active, &:focus {
+                    color: var(--bs-primary) !important;
+                }
+            }
+        }
+
+        &::before {
+            content: '';
+    
+            position: absolute;
+    
+            left: 0;
+            bottom: 0;
+            right: 0;
+
+            z-index: 1;
+
+            height: 80%;
+            width: 100%;
+            background: linear-gradient($background_top, $background_bottom 90%);
+        }
     }
 }

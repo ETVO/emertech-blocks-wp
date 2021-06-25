@@ -7,6 +7,8 @@ function render_block_transform($attributes, $content)
 
     ob_start(); // Start HTML buffering
     $is_transform = class_exists('Emertech_Transform_CPT') && is_singular('transform');
+
+    $optionals_title = __('Monte o seu orçamento');
 ?>
 
     <section class="eb-transform my-3 my-md-4 my-lg-5" id="<?php echo $anchor; ?>">
@@ -27,10 +29,10 @@ function render_block_transform($attributes, $content)
                                 ?>
                             </div>
 
-                            <div class="optionals px-3 pb-3 border border-primary rounded">
+                            <div class="optionals border border-primary rounded">
                                 <div class="title">
                                     <h6 class="text-uppercase fw-normal bg-dark rounded px-1 text-primary">
-                                        Monte o seu orçamento
+                                        <?php echo $optionals_title; ?>
                                     </h6>
                                 </div>
 

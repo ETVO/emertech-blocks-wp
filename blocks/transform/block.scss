@@ -1,4 +1,24 @@
 .eb-transform {
+
+    .meta {
+        .optionals {
+            position: relative;
+
+            padding: 0 1rem 1rem;
+            margin: 0 -1rem -1rem;
+
+            > .title {
+                position: absolute;
+                top: 0;
+                left: .25rem;
+                margin-top: -.75rem;
+            }
+
+            .continue {
+                margin-top: 1rem;
+            }
+        }
+    }
     
     .form {
         border: solid 1px var(--bs-secondary);
@@ -18,23 +38,6 @@
     .eb-transform {
         overflow: auto;
 
-        .meta {
-            .optionals {
-                position: relative;
-
-                > .title {
-                    position: absolute;
-                    top: 0;
-                    left: .25rem;
-                    margin-top: -.75rem;
-                }
-
-                .continue {
-                    margin-top: 1rem;
-                }
-            }
-        }
-
         .form-parent {
             overflow: auto;
 
@@ -46,5 +49,18 @@
 
         }
         
+    }
+}
+
+@media all and (max-width: 576px) { 
+    
+    .eb-transform {
+        overflow: auto;
+
+        .meta {
+            .optionals {
+                margin: unset;
+            }
+        }
     }
 }
