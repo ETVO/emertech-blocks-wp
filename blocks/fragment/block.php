@@ -19,8 +19,8 @@ function render_block_fragment($attributes) {
 
         <section class="eb-fragment bg-dark" id="<?php echo $anchor; ?>">
             <div class="d-flex">
-                <div class="container p-4 p-lg-5">
-                    <div class="content col-12 col-lg-10 m-auto px-2 text-light">
+                <div class="container my-3">
+                    <div class="content col-12 col-sm-10 col-md-9 col-lg-8 px-2 py-4 m-auto">
                         <div class="row">
                             <div class="col-12">
                                 <div class="figure fw-lighter d-flex" <?php echo $figure_aos; ?>>

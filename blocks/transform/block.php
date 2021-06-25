@@ -19,15 +19,37 @@ function render_block_transform($attributes, $content)
                                 echo $content;
                             ?>
                         </div>
-                        <div class="optionals">
-                            <?php
+                        <div class="meta py-3">
+                            <div class="caracters pb-3">
+                                <?php
+                                    if($is_transform)
+                                        get_transform_template_part('partials/component-caracters'); 
+                                ?>
+                            </div>
+
+                            <div class="optionals px-3 pb-3 border border-primary rounded">
+                                <div class="title">
+                                    <h6 class="text-uppercase fw-normal bg-dark rounded px-1 text-primary">
+                                        Monte o seu orçamento
+                                    </h6>
+                                </div>
+
+                                <?php
                                 if($is_transform)
                                     get_transform_template_part('partials/component-optionals'); 
-                            ?>
+                                ?>
+
+                                <button id="continueToRequestBtn" class="btn btn-primary d-none continue" type="button">
+                                    <?php echo __('Continuar'); ?>
+                                </button>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-12 col-lg-4 pt-2 pt-lg-0 ps-lg-4 ps-xl-5 d-flex d-lg-block">
-                        <div class="form p-3 rounded m-auto">
+                    <div class="form-parent col-12 col-lg-4 ps-lg-4 ps-xl-5 d-flex flex-column d-lg-block">
+                        <div class="form p-3 rounded m-auto"
+                            title="<?php echo __('Últimos passos para enviar a sua solicitação!'); ?>" 
+                            data-bs-placement="left"
+                            data-bs-custom-class="primary-tooltip">
 
                             <?php if($form_title != ''): ?>
                                 <div class="title">

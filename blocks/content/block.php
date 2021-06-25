@@ -12,8 +12,10 @@ function render_block_content($attributes, $content) {
     ?>
 
         <section class="eb-content" id="<?php echo $anchor; ?>" <?php echo $content_aos; ?>>
-            <div class="content col-12 col-sm-10 col-md-9 col-lg-8 py-4 m-auto">
-                <?php echo $content; ?>
+            <div class="container my-3">
+                <div class="content col-12 col-sm-10 col-md-9 col-lg-8 px-2 py-4 m-auto">
+                    <?php echo $content; ?>
+                </div>
             </div>
         </section>
     <?php

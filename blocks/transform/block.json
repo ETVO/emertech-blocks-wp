@@ -8,9 +8,6 @@
     "attrs": {
         "anchor": {
             "type": "string"
-        },
-        "formTitle": {
-            "type": "string"
         }
     },
     "edit": [
@@ -28,17 +25,6 @@
         {
             "tag": "input",
             "type": "inner"
-        },
-        {
-            "tag": "title",
-            "title": "Formulário"
-        },
-        {
-            "tag": "input",
-            "type": "text",
-            "attr": "formTitle",
-            "label": "Título do formulário",
-            "help": "Deixe em branco para ocultar"
         }
     ]
 

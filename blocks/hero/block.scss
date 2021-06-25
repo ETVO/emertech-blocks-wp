@@ -1,6 +1,6 @@
-$opacity: 0.7;
-$background_top: rgba(0,0,0,0);
-$background_bottom: rgba(0,0,0,1);
+$opacity: 0.9;
+$background_top: rgba(#000, 0);
+$background_bottom: rgba(#000, 1);
 
 $background: #222;
 
@@ -36,7 +36,7 @@ $text_color: #fff;
 
         opacity: $opacity;
             
-        background: linear-gradient($background_top, $background_bottom);
+        background: linear-gradient($background_top, $background_bottom 90%);
     }
 
     & > div {

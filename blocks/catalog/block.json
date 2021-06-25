@@ -1,0 +1,50 @@
+{
+    "slug": "catalog",
+    "title": "Catálogo",
+    "desc": "Catálogo para ser usado na página de Transformações",
+    "icon": " bi bi-grid-3x2-gap-fill text-primary",
+    "categ": "emertechblock",
+    "usesInner": true,
+    "attrs": {
+        "anchor": {
+            "type": "string"
+        },
+        "postType": {
+            "type": "string"
+        }
+    },
+    "edit": [
+        {
+            "tag": "input",
+            "type": "text",
+            "attr": "anchor",
+            "label": "Âncora HTML",
+            "help": "Caso queira criar um link dentro da página"
+        },
+        {
+            "tag": "title",
+            "title": "Configuração"
+        },
+        {
+            "tag": "input",
+            "type": "select",
+            "attr": "postType",
+            "label": "Tipo a usar",
+            "options": [
+                {
+                    "value": "post",
+                    "label": "Artigos"
+                },
+                {
+                    "value": "page",
+                    "label": "Páginas"
+                },
+                {
+                    "value": "transform",
+                    "label": "Transformações"
+                }
+            ]
+        }
+    ]
+
+}
