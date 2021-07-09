@@ -12,7 +12,13 @@
         "mainTitle": {
             "type": "string"
         },
+        "tabsIcon": {
+            "type": "string"
+        },
         "title1": {
+            "type": "string"
+        },
+        "tabIcon1": {
             "type": "string"
         },
         "hide1": {
@@ -24,6 +30,9 @@
         "title2": {
             "type": "string"
         },
+        "tabIcon2": {
+            "type": "string"
+        },
         "hide2": {
             "type": "string"
         },
@@ -31,6 +40,9 @@
             "type": "string"
         },
         "title3": {
+            "type": "string"
+        },
+        "tabIcon3": {
             "type": "string"
         },
         "hide3": {
@@ -56,6 +68,13 @@
             "help": "Deixe em branco para ocultar"
         },
         {
+            "tag": "input",
+            "type": "bsIcon",
+            "attr": "tabsIcon",
+            "label": "Ícone padrão das guias",
+            "help": "Deixe em branco para ocultar"
+        },
+        {
             "tag": "title",
             "title": "Configuração Seção 1"
         },
@@ -65,6 +84,13 @@
             "attr": "title1",
             "label": "Título",
             "help": "Título a ser mostrado na guia"
+        },
+        {
+            "tag": "input",
+            "type": "bsIcon",
+            "attr": "tabIcon1",
+            "label": "Ícone da guia",
+            "help": "Deixe em branco para ocultar ou usar ícone padrão"
         },
         {
             "tag": "input",
@@ -92,6 +118,13 @@
         },
         {
             "tag": "input",
+            "type": "bsIcon",
+            "attr": "tabIcon2",
+            "label": "Ícone da guia",
+            "help": "Deixe em branco para ocultar ou usar ícone padrão"
+        },
+        {
+            "tag": "input",
             "type": "text",
             "attr": "anchor2",
             "label": "Âncora",
@@ -113,6 +146,13 @@
             "attr": "title3",
             "label": "Título",
             "help": "Título a ser mostrado na guia"
+        },
+        {
+            "tag": "input",
+            "type": "bsIcon",
+            "attr": "tabIcon3",
+            "label": "Ícone da guia",
+            "help": "Deixe em branco para ocultar ou usar ícone padrão"
         },
         {
             "tag": "input",

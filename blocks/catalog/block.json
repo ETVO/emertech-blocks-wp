@@ -12,7 +12,22 @@
         "postType": {
             "type": "string"
         },
-        "viewAllLabel": {
+        "primaryBtnLabel": {
+            "type": "string"
+        },
+        "primaryBtnIcon": {
+            "type": "string"
+        },
+        "secondaryBtnLabel": {
+            "type": "string"
+        },
+        "secondaryBtnIcon": {
+            "type": "string"
+        },
+        "secondaryBtnLink": {
+            "type": "string"
+        },
+        "secondaryBtnDownload": {
             "type": "string"
         },
         "noOfPosts": {
@@ -52,11 +67,54 @@
             ]
         },
         {
+            "tag": "title",
+            "title": "Botão \"Ver catálogo\""
+        },
+        {
             "tag": "input",
             "type": "text",
-            "attr": "viewAllLabel",
-            "label": "Texto de \"Ver Todos\"",
-            "help": "Ex.: \"Ver catálogo completo\" ou \"Abrir catálogo\""
+            "attr": "primaryBtnLabel",
+            "label": "Texto",
+            "help": "Ex.: \"Ver catálogo completo\" ou \"Abrir catálogo\". Deixar em branco para ocultar"
+        },
+        {
+            "tag": "input",
+            "type": "bsIcon",
+            "attr": "primaryBtnIcon",
+            "label": "Ícone",
+            "help": "Deixar em branco para ocultar"
+        },
+        {
+            "tag": "title",
+            "title": "Botão secundário"
+        },
+        {
+            "tag": "input",
+            "type": "text",
+            "attr": "secondaryBtnLabel",
+            "label": "Texto",
+            "help": "Ex.: \"Fazer download de Catálogo\" ou \"Descarregar catálogo\""
+        },
+        {
+            "tag": "input",
+            "type": "bsIcon",
+            "attr": "secondaryBtnIcon",
+            "label": "Ícone",
+            "help": "Deixar em branco para ocultar"
+        },
+        {
+            "tag": "input",
+            "type": "url",
+            "attr": "secondaryBtnLink",
+            "label": "Link",
+            "help": "Link do botão"
+        },
+        {
+            "tag": "input",
+            "type": "check",
+            "attr": "secondaryBtnDownload",
+            "label": "Fazer download de arquivo?",
+            "help": "Ativar caso queira fazer download do arquivo que consta no link acima"
         },
         {
             "tag": "input",

@@ -510,6 +510,25 @@ import data from "./blocks.json";
                         </BaseControl>
                     </Fragment>;
             }
+            else if(type == "bsIcon") {
+                
+                inputContent =
+                    <Fragment>
+                        <TextControl
+                            label={ label }
+                            help={ help }
+                            value={ value }
+                            onChange={ (value) => {
+                                setAttributes({[attr]: value});
+                            } }
+                        >
+                        </TextControl>
+                        <small style={{display: "block", marginTop: "-10px", fontStyle: 'oblique'}}>
+                            { __('Insira o nome do ícone desejado com base na lista de ícones: ') } 
+                            <a href="https://icons.getbootstrap.com/">Bootstrap Icons</a>
+                        </small>
+                    </Fragment>;
+            }
 
             return inputContent;
         }

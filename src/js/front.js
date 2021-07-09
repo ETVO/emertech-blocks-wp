@@ -33,13 +33,13 @@
          * 
          * @since 2.0
          */
-        function generateCarouselIndicators() {
+        function generateCarousel() {
             $(".carousel").each(function() {
+
                 // Don't generate indicatos if it already has them 
-                // OR if it has them disabled 
-                if($(this).find(".carousel-indicators") 
-                || $(this).attr("data-emertech-indicators" == "false")) 
-                    return;
+                // OR if it has them disabled
+                var addIndicators = !$(this).find(".carousel-indicators") 
+                    && $(this).attr("data-emertech-indicators") != "false";
 
                 var $items = $(this).find(".carousel-item");
 
@@ -48,10 +48,17 @@
                 var indicators = '<div class="carousel-indicators">';
 
                 for (var i = 0; i < $items.length; i++) {
+                    
+                    // Get item
                     var item = $items[i];
-                    var isFirst = !$(item).hasClass("active") && i == 0;
+                    // Check if it is the first one
+                    var isFirst = i == 0;
 
+                    // Add active class to item if it is the first one
                     var activeClass = (isFirst) ? "active" : "";
+                    $(item).addClass(activeClass);
+
+                    // Create indicator for item
                     var ariaLabel = "Slide " + (i+1);
                     var indicator = '<button';
                     indicator += ' type="button"';
@@ -61,16 +68,17 @@
                     indicator += ' aria-current="true"'; 
                     indicator += ' class="' + activeClass + '"';
                     indicator += '></button>';
-                    $(item).addClass(activeClass);
 
+                    // Add indicator to indicators
                     indicators += indicator;
                 }
 
+                // Close indicators div
                 indicators += '</div>';
 
-                console.log(indicators);
-
-                $(this).append(indicators);
+                // Append indicators to carousel only if it is to be added
+                if(addIndicators)
+                    $(this).append(indicators);
             })
         }
 
@@ -151,7 +159,7 @@
          */
         $(document.body).ready(function (){
             setSVGViewBox();
-            generateCarouselIndicators();
+            generateCarousel();
             syncTabsWithContent();
         });
     }

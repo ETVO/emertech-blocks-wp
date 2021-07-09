@@ -4,8 +4,12 @@
         .optionals {
             position: relative;
 
-            padding: 0 1rem 1rem;
+            padding: 1rem 1rem;
             margin: 0 -1rem -1rem;
+
+            &.show-title {
+                padding-top: 0;
+            }
 
             > .title {
                 position: absolute;

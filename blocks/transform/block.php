@@ -8,7 +8,10 @@ function render_block_transform($attributes, $content)
     ob_start(); // Start HTML buffering
     $is_transform = class_exists('Emertech_Transform_CPT') && is_singular('transform');
 
-    $optionals_title = __('Monte o seu orçamento');
+    $optionals_title = get_theme_mod('emertech_transform_optionals_title');
+
+    $continue_btn_label = get_theme_mod( 'emertech_transform_strings_continue_btn' );
+    if($continue_btn_label == '') $continue_btn_label = __('Continuar');
 ?>
 
     <section class="eb-transform my-3 my-md-4 my-lg-5" id="<?php echo $anchor; ?>">
@@ -29,12 +32,14 @@ function render_block_transform($attributes, $content)
                                 ?>
                             </div>
 
-                            <div class="optionals border border-primary rounded">
-                                <div class="title">
-                                    <h6 class="text-uppercase fw-normal bg-dark rounded px-1 text-primary">
-                                        <?php echo $optionals_title; ?>
-                                    </h6>
-                                </div>
+                            <div class="optionals border border-primary rounded <?php if($optionals_title != '') echo 'show-title'; ?>">
+                                <?php if($optionals_title != ''): ?>
+                                    <div class="title">
+                                        <h6 class="text-uppercase fw-normal bg-dark rounded px-1 text-primary">
+                                            <?php echo $optionals_title; ?>
+                                        </h6>
+                                    </div>
+                                <?php endif; ?>
 
                                 <?php
                                 if($is_transform)
@@ -42,12 +47,12 @@ function render_block_transform($attributes, $content)
                                 ?>
 
                                 <button id="continueToRequestBtn" class="btn btn-primary d-none continue" type="button">
-                                    <?php echo __('Continuar'); ?>
+                                    <?php echo $continue_btn_label; ?>
                                 </button>
                             </div>
                         </div>
                     </div>
-                    <div class="form-parent col-12 col-lg-4 ps-lg-4 ps-xl-5 d-flex flex-column d-lg-block">
+                    <div class="form-parent col-12 col-lg-4 pt-4 pt-lg-0 ps-lg-4 ps-xl-5 d-flex flex-column d-lg-block">
                         <div class="form p-3 rounded m-auto"
                             title="<?php echo __('Últimos passos para enviar a sua solicitação!'); ?>" 
                             data-bs-placement="left"

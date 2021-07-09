@@ -5,11 +5,21 @@ function render_block_catalog($attributes, $content)
     $anchor = $attributes['anchor'];
     $post_type = $attributes['postType'];
     $use_transform = $post_type == 'transform';
-
-    $archive_label = $attributes['viewAllLabel'];
     
-    $view_more_label = __('Ver mais sobre ');
-    $archive_link = get_post_type_archive_link( $post_type );
+    $no_of_posts = $attributes['noOfPosts'];
+    
+    $primary_btn_label = $attributes['primaryBtnLabel'];
+    $primary_btn_icon = $attributes['primaryBtnIcon'];
+    $primary_btn_link = get_post_type_archive_link( $post_type );
+    
+    $secondary_btn_label = $attributes['secondaryBtnLabel'];
+    $secondary_btn_icon = $attributes['secondaryBtnIcon'];
+    $secondary_btn_link = $attributes['secondaryBtnLink'];
+    $secondary_btn_download = $attributes['secondaryBtnDownload'];
+
+    $view_more_label = get_theme_mod( 'emertech_transform_strings_view_more' );
+    if($view_more_label == '') $view_more_label = __('Ver Mais');
+    
     
     ob_start(); // Start HTML buffering
     $transform_exists = class_exists('Emertech_Transform_CPT');
@@ -26,7 +36,7 @@ function render_block_catalog($attributes, $content)
         'post_type'              => $post_type,
         'post_status'            => array('publish'),
         'has_password'           => false,
-        'posts_per_page'         => '8',
+        'posts_per_page'         => $no_of_posts,
         'no_found_posts'         => true,
         'order'                  => 'ASC',
         'orderby'                => 'menu_order',
@@ -39,7 +49,7 @@ function render_block_catalog($attributes, $content)
         ?>
         <section class="eb-catalog" id="<?php echo $anchor; ?>">
             <div class="container my-5">
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-xxl-4">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4">
                     <?php
                     while ($query->have_posts()) :
                         $query->the_post();
@@ -58,7 +68,7 @@ function render_block_catalog($attributes, $content)
                         $title = get_the_title();
                         $excerpt = get_the_excerpt();
                         ?>
-                        <div class="col p-2">
+                        <div class="col p-2 mx-auto">
                             
                             <div class="card bg-dark position-relative clink" href="<?php echo $permalink; ?>">
 
@@ -73,7 +83,8 @@ function render_block_catalog($attributes, $content)
 
                                     <div class="card-body">
                                         <a href="<?php echo $permalink; ?>" class="title eb-link after" 
-                                        aria-label="<?php echo $view_more_label . $title;  ?>">
+                                        aria-label="<?php echo $view_more_label . " - $title";  ?>"
+                                        title="<?php echo $view_more_label . " - $title";  ?>">
                                             <h5 class="d-inline-block card-title">
                                                 <?php echo $title; ?>
                                             </h5>
@@ -86,11 +97,24 @@ function render_block_catalog($attributes, $content)
                     endwhile;
                     ?>
                 </div>
-                <div class="d-flex mt-2">
-                    <a class="btn btn-primary text-uppercase m-auto eb-link plus light-ico" href="<?php echo $archive_link; ?>">
-                        <?php echo $archive_label; ?>
-                    </a>
-                </div>
+                <?php if($primary_btn_label != ''): ?>
+                    <div class="d-flex mt-4">
+                        <a class="btn btn-primary text-uppercase m-auto" href="<?php echo $primary_btn_link; ?>">
+                            <span class="bi bi-<?php echo $primary_btn_icon; ?>"></span>
+                            <?php echo $primary_btn_label; ?>
+                        </a>
+                    </div>
+                <?php endif; ?>
+                <?php if($secondary_btn_label != ''): ?>
+                    <div class="d-flex mt-2">
+                        <a class="btn btn-secondary text-uppercase m-auto" style="font-size: 0.9em;" 
+                        href="<?php echo $secondary_btn_link; ?>"
+                        <?php if($secondary_btn_download) echo "target=\"_blank\" download"; ?>>
+                            <span class="bi bi-<?php echo $secondary_btn_icon; ?>"></span>
+                            <?php echo $secondary_btn_label; ?>
+                        </a>
+                    </div>
+                <?php endif; ?>
             </div>
         </section>
         <?php

@@ -1,15 +1,14 @@
 
 .eb-testimonial {
     &.carousel-item {
-        // height: 400px;
-    }
-    .content {
-        margin: 2% 8% 4%;
-        .author-image {
-            height: 60px;
-            width: 60px;
-            object-fit: cover;
-            border-radius: 50%;
+        .content {
+            margin: 2% 8% 4%;
+            .author-image {
+                height: 60px;
+                width: 60px;
+                object-fit: cover;
+                border-radius: 50%;
+            }
         }
     }
 }
