@@ -20,10 +20,7 @@ function render_block_tabs($attributes, $content)
     <section class="eb-tabs" id="<?php echo $anchor; ?>">
         <div class="container my-5">
             <nav class="d-flex flex-column">
-                <div class="title m-auto mt-2 mb-3 text-uppercase text-center">
-                    <!-- <h2> 
-                        <span class="bi bi-question-diamond-fill d-block mb-1 text-primary"></span>
-                    </h2> -->
+                <div class="title m-auto mt-3 mb-5 text-uppercase text-center">
                     <h3>
                         <?php echo $main_title; ?>
                     </h3>
@@ -35,7 +32,7 @@ function render_block_tabs($attributes, $content)
                             $tab_icon = $attributes['tabIcon' . $i] ?? $tabs_icon;
                     ?>
                             <button class="tabs-link nav-link mx-2 text-center" data-bs-toggle="tab" type="button" role="tab">
-                                <span class="bi bi-<?php echo $tab_icon; ?> d-block"></span>
+                                <!-- <span class="bi bi-<?php echo $tab_icon; ?> d-block"></span> -->
                                 <span class="text-light" id="<?php echo $attributes['anchor' . $i] ?>">
                                     <?php echo $attributes['title' . $i] ?>
                                 </span>

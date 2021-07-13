@@ -1,7 +1,8 @@
 .eb-tabs {
     .nav {
         .tabs-link {
-            border: solid 3px #ce1000;
+            border: solid 3px var(--bs-primary);
+            min-height: 60px;
         }
     }
 }

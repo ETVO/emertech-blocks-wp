@@ -68,7 +68,7 @@ function render_block_catalog($attributes, $content)
                         $title = get_the_title();
                         $excerpt = get_the_excerpt();
                         ?>
-                        <div class="col p-2 mx-auto">
+                        <div class="col p-2">
                             
                             <div class="card bg-dark position-relative clink" href="<?php echo $permalink; ?>">
 
@@ -98,7 +98,7 @@ function render_block_catalog($attributes, $content)
                     ?>
                 </div>
                 <?php if($primary_btn_label != ''): ?>
-                    <div class="d-flex mt-4">
+                    <div class="d-flex mt-5">
                         <a class="btn btn-primary text-uppercase m-auto" href="<?php echo $primary_btn_link; ?>">
                             <span class="bi bi-<?php echo $primary_btn_icon; ?>"></span>
                             <?php echo $primary_btn_label; ?>
@@ -106,7 +106,7 @@ function render_block_catalog($attributes, $content)
                     </div>
                 <?php endif; ?>
                 <?php if($secondary_btn_label != ''): ?>
-                    <div class="d-flex mt-2">
+                    <div class="d-flex mt-3">
                         <a class="btn btn-secondary text-uppercase m-auto" style="font-size: 0.9em;" 
                         href="<?php echo $secondary_btn_link; ?>"
                         <?php if($secondary_btn_download) echo "target=\"_blank\" download"; ?>>
