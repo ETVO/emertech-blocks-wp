@@ -24,29 +24,20 @@ function render_block_compact($attributes, $content) {
                     <div class="symbol d-flex mb-2" <?php echo $symbol_aos; ?>>
                         <img src="<?php echo $symbol_url; ?>" alt="" class="img-fluid symbol-img m-auto">
                     </div>
-                    <div class="title text-uppercase" <?php echo $title_aos; ?>>
+                    <div class="title" <?php echo $title_aos; ?>>
                         <h2 class="mb-0">
                             <span class="d-block"<?php echo $title_aos; ?>>
                                 <?php echo $title; ?>
                             </span>
-                            <span class="d-block fw-light" <?php echo $subtitle_aos; ?>>
+                        </h2>
+                        <h4 class="mb-0">
+                            <span class="d-block fw-lighter" <?php echo $subtitle_aos; ?>>
                                 <?php echo $subtitle; ?>
                             </span>
-                        </h2>
+                        </h4>
                     </div>
-                    <!-- <div class="subtitle text-uppercase fs-4" <?php echo $subtitle_aos; ?>>
-                        <h2 class="fw-light mt-0">
-                            <?php echo $subtitle; ?>
-                        </h2>
-                    </div> -->
                     <div class="content text-break pt-2" <?php echo $content_aos; ?>>
                         <?php echo $content; ?>
-                        <!-- <form>
-                            <div class="input-group">
-                                <input type="text" class="form-control d-block w-100 my-3 mx-4 bg-dark text-light" placeholder="E-mail">
-                            </div>
-                            <input type="submit" class="btn btn-primary px-4" value="INSCREVER" onclick="return false;">
-                        </form> -->
                     </div>
                 </div>
             </div>

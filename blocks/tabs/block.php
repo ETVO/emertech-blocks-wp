@@ -20,7 +20,7 @@ function render_block_tabs($attributes, $content)
     <section class="eb-tabs" id="<?php echo $anchor; ?>">
         <div class="container my-5">
             <nav class="d-flex flex-column">
-                <div class="title m-auto mt-3 mb-5 text-uppercase text-center">
+                <div class="title m-auto mt-3 mb-4 text-uppercase text-center">
                     <h3>
                         <?php echo $main_title; ?>
                     </h3>

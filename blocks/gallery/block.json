@@ -32,13 +32,6 @@
         {
             "tag": "title",
             "title": "Conteúdo" 
-        },
-        {
-            "tag": "input",
-            "type": "text",
-            "attr": "title",
-            "label": "Título",
-            "help": "Deixar em branco para ocultar"
         }
     ]
 

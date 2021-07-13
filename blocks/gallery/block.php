@@ -42,11 +42,11 @@ function render_block_gallery($attributes)
                             $remain = $images_count - $i;
                             
                             ?>                            
-                                <div class="image-preview remain"
+                                <div class="image-preview remain mx-1 mx-md-0 my-md-1"
                                 data-bs-target="#<?php echo $modal_id; ?>" 
                                 data-bs-toggle="modal" 
                                 data-bs-dismiss="modal">
-                                    <img src="<?php echo $images[$i]['url']; ?>">
+                                    <!-- <img src="<?php echo $images[$i]['url']; ?>"> -->
                                     <div>
                                         <span>
                                             +<?php echo $remain; ?>

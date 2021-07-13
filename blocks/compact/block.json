@@ -32,21 +32,9 @@
         },
         {
             "tag": "input",
-            "type": "check",
-            "attr": "showTitle",
-            "label": "Exibir Título?"
-        },
-        {
-            "tag": "input",
             "type": "text",
             "attr": "subtitle",
             "label": "Subtítulo"
-        },
-        {
-            "tag": "input",
-            "type": "check",
-            "attr": "showSubtitle",
-            "label": "Exibir Subtítulo?"
         },
         {
             "tag": "title",
