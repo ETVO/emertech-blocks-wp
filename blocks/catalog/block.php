@@ -3,6 +3,13 @@
 function render_block_catalog($attributes, $content)
 {
     $anchor = $attributes['anchor'];
+    
+    $title = $attributes['title'];
+    $subtitle = $attributes['subtitle'];
+
+    $enable_read_more = $attributes['enableReadMore'];
+    if(empty($enable_read_more)) $enable_read_more = 0;
+
     $post_type = $attributes['postType'];
     $use_transform = $post_type == 'transform';
     
@@ -16,17 +23,24 @@ function render_block_catalog($attributes, $content)
     $secondary_btn_icon = $attributes['secondaryBtnIcon'];
     $secondary_btn_link = $attributes['secondaryBtnLink'];
     $secondary_btn_download = $attributes['secondaryBtnDownload'];
-
+    
     $view_more_label = get_theme_mod( 'emertech_transform_strings_view_more' );
-    if($view_more_label == '') $view_more_label = __('Ver Mais');
+    if($view_more_label == '') $view_more_label = __('Veja Mais');
+
+    $read_more_label = get_theme_mod( 'emertech_transform_strings_read_more' );
+    if($read_more_label == '') $read_more_label = __('Leia Mais');
     
+    $orderby = $attributes['order'];
+    if($orderby == '') $orderby = 'title';
     
+    $order = ($orderby == 'title') ? 'ASC' : 'DESC';
+
     ob_start(); // Start HTML buffering
     $transform_exists = class_exists('Emertech_Transform_CPT');
 
     if ($use_transform && !$transform_exists) {
         echo "<script>";
-        echo "console.error(\"Plugin Emertech Transformations is missing so catalog block cannot be rendered.\");";
+        echo "console.error(\"Plugin Emertech Transformations is missing so catalog block has not been rendered.\");";
         echo "</script>";
         return;
     }
@@ -38,8 +52,9 @@ function render_block_catalog($attributes, $content)
         'has_password'           => false,
         'posts_per_page'         => $no_of_posts,
         'no_found_posts'         => true,
-        'order'                  => 'ASC',
-        'orderby'                => 'menu_order',
+        
+        // Order ASC first by 'menu_order', only after by 'title' or 'date'
+        'orderby'                => array( 'menu_order' => 'ASC' , $orderby => $order ), 
     );
 
     // The Query
@@ -49,7 +64,20 @@ function render_block_catalog($attributes, $content)
         ?>
         <section class="eb-catalog" id="<?php echo $anchor; ?>">
             <div class="container my-5">
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4">
+                <div class="row m-auto justify-content-center">
+                    <div class="title text-center">
+                            <?php if($title): ?>
+                                <h2>
+                                    <?php echo $title; ?>
+                                </h2>
+                            <?php endif; ?>
+
+                            <?php if($subtitle): ?>
+                                <h4 class="fw-lighter">
+                                    <?php echo $subtitle; ?>
+                                </h4>
+                            <?php endif; ?>
+                        </div>  
                     <?php
                     while ($query->have_posts()) :
                         $query->the_post();
@@ -58,7 +86,7 @@ function render_block_catalog($attributes, $content)
                         
                         $permalink = esc_url(get_the_permalink());
                         
-                        $image_url = get_the_post_thumbnail_url($post->ID, 'post-thumbnail');
+                        $image_url = get_the_post_thumbnail_url($post->ID, 'thumbnail');
                         $image_alt = get_the_post_thumbnail_caption();
                         
                         $category = get_the_category();
@@ -68,7 +96,7 @@ function render_block_catalog($attributes, $content)
                         $title = get_the_title();
                         $excerpt = get_the_excerpt();
                         ?>
-                        <div class="col p-2">
+                        <div class="column col-12 col-sm-6 col-md-4 col-xl-3 p-2">
                             
                             <div class="card bg-dark position-relative clink" href="<?php echo $permalink; ?>">
 
@@ -82,13 +110,27 @@ function render_block_catalog($attributes, $content)
                                 <?php } ?>
 
                                     <div class="card-body">
-                                        <a href="<?php echo $permalink; ?>" class="title eb-link after" 
-                                        aria-label="<?php echo $view_more_label . " - $title";  ?>"
-                                        title="<?php echo $view_more_label . " - $title";  ?>">
-                                            <h5 class="d-inline-block card-title">
-                                                <?php echo $title; ?>
-                                            </h5>
-                                        </a>
+                                        
+                                        <?php if(!$enable_read_more): ?>
+                                            <a href="<?php echo $permalink; ?>" class="title eb-link after" 
+                                            aria-label="<?php echo $view_more_label . " - $title";  ?>"
+                                            title="<?php echo $view_more_label . " - $title";  ?>">
+                                        <?php endif; ?>
+                                        
+                                                <h5 class="<?php if(!$enable_read_more) echo "d-inline-block" ?> card-title">
+                                                    <?php echo $title; ?>
+                                                </h5>
+                                        
+                                        <?php if(!$enable_read_more): ?>
+                                            </a>
+                                        <?php endif; ?>
+
+
+                                        <?php if($enable_read_more): ?>
+                                            <a href="<?php echo $permalink; ?>"  class="eb-link">
+                                                <?php echo $read_more_label; ?>
+                                            </a>
+                                        <?php endif; ?>
                                     </div>
                                 </div>
                             </div>

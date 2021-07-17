@@ -17,6 +17,8 @@ function render_block_carousel($attributes, $content)
     // echo "\n slide $auto_slide";
     // echo "\n indicators $show_indicators";
     // echo "\n controls $show_controls";
+
+    $size = $attributes["size"];
     
     $slide_interval = $attributes["slideInterval"];
     if(empty($slide_interval)) $slide_interval = 5;
@@ -24,12 +26,22 @@ function render_block_carousel($attributes, $content)
     // Convert from seconds to miliseconds 
     $slide_interval *= 1000;
 
+    if($size == 'G') {
+        $col_size = 12;
+    } 
+    else if ($size == 'M') {
+        $col_size = 9;
+    }
+    else {
+        $col_size = 6;
+    }
+
 
     ob_start(); // Start HTML buffering
 
     ?>
 
-        <section class="eb-carousel carousel slide <?php echo "eb-show-controls-$show_controls eb-show-indicators-$show_indicators" ?>" 
+        <section class="eb-carousel carousel slide col-12 col-md-<?php echo $col_size; ?> m-auto <?php echo "eb-show-controls-$show_controls eb-show-indicators-$show_indicators" ?>" 
         data-bs-ride="<?php echo ($auto_slide) ? "carousel" : "false" ?>" 
         data-bs-interval="<?php echo ($auto_slide) ? $slide_interval : "" ?>" 
         id="<?php echo $block_id; ?>">

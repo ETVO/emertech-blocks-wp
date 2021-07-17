@@ -21,6 +21,9 @@
         "slideInterval": {
             "type": "integer",
             "default": 5.5
+        },
+        "size": {
+            "type": "string"
         }
     },
     "edit": [
@@ -57,6 +60,26 @@
             "max": 10,
             "label": "Intervalo de cada exibição",
             "help": "Em segundos"
+        },
+        {
+            "tag": "input",
+            "type": "select",
+            "attr": "size",
+            "label": "Tamanho",
+            "options": [
+                {
+                    "label": "P",
+                    "value": "P"
+                },
+                {
+                    "label": "M",
+                    "value": "M"
+                },
+                {
+                    "label": "G",
+                    "value": "G"
+                }
+            ]
         },
         {
             "tag": "title",

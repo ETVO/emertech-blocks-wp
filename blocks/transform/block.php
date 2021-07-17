@@ -32,24 +32,26 @@ function render_block_transform($attributes, $content)
                                 ?>
                             </div>
 
-                            <div class="optionals border border-primary rounded <?php if($optionals_title != '') echo 'show-title'; ?>">
-                                <?php if($optionals_title != ''): ?>
-                                    <div class="title">
-                                        <h6 class="text-uppercase fw-normal bg-dark rounded px-1 text-primary">
-                                            <?php echo $optionals_title; ?>
-                                        </h6>
-                                    </div>
-                                <?php endif; ?>
+                            <?php if( get_the_terms( get_the_ID(), 'opcional' ) ): ?>
+                                <div class="optionals border border-primary rounded <?php if($optionals_title != '') echo 'show-title'; ?>">
+                                    <?php if($optionals_title != ''): ?>
+                                        <div class="title">
+                                            <h6 class="text-uppercase fw-normal bg-dark rounded px-1 text-primary">
+                                                <?php echo $optionals_title; ?>
+                                            </h6>
+                                        </div>
+                                    <?php endif; ?>
 
-                                <?php
-                                if($is_transform)
-                                    get_transform_template_part('partials/component-optionals'); 
-                                ?>
+                                    <?php
+                                    if($is_transform)
+                                        get_transform_template_part('partials/component-optionals'); 
+                                    ?>
 
-                                <button id="continueToRequestBtn" class="btn btn-primary d-none continue" type="button">
-                                    <?php echo $continue_btn_label; ?>
-                                </button>
-                            </div>
+                                    <button id="continueToRequestBtn" class="btn btn-primary d-none continue" type="button">
+                                        <?php echo $continue_btn_label; ?>
+                                    </button>
+                                </div>
+                            <?php endif; ?>
                         </div>
                     </div>
                     <div class="form-parent col-12 col-lg-4 pt-4 pt-lg-0 ps-lg-4 ps-xl-5 d-flex flex-column d-lg-block">

@@ -49,8 +49,7 @@
             "min": "1",
             "max": "5",
             "beforeIcon": "bi bi-star",
-            "afterIcon": "bi bi-star-fill",
-            "value": 5
+            "afterIcon": "bi bi-star-fill"
         },
         {
             "tag": "title",

@@ -80,3 +80,14 @@ $background_bottom: rgba(#000, 0.9);
         }
     }
 }
+
+
+@media all and (max-width: 575.9px) {
+    @media all and (min-width: 350px) {
+        .eb-catalog {
+            .column {
+                width: 83.3333333333% !important;
+            }
+        }
+    }
+}

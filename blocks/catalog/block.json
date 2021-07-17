@@ -9,6 +9,15 @@
         "anchor": {
             "type": "string"
         },
+        "title": {
+            "type": "string"
+        },
+        "subtitle": {
+            "type": "string"
+        },
+        "enableReadMore": {
+            "type": "boolean"
+        },
         "postType": {
             "type": "string"
         },
@@ -32,6 +41,9 @@
         },
         "noOfPosts": {
             "type": "integer"
+        },
+        "order": {
+            "type": "string"
         }
     },
     "edit": [
@@ -41,6 +53,30 @@
             "attr": "anchor",
             "label": "Âncora HTML",
             "help": "Caso queira criar um link dentro da página"
+        },
+        {
+            "tag": "title",
+            "title": "Conteúdo"
+        },
+        {
+            "tag": "input",
+            "type": "text",
+            "attr": "title",
+            "label": "Título",
+            "help": "Deixe em branco para ocultar."
+        },
+        {
+            "tag": "input",
+            "type": "text",
+            "attr": "subtitle",
+            "label": "Subtítulo",
+            "help": "Deixe em branco para ocultar."
+        },
+        {
+            "tag": "input",
+            "type": "check",
+            "attr": "enableReadMore",
+            "label": "Mostrar botão \"Leia Mais\""
         },
         {
             "tag": "title",
@@ -123,6 +159,23 @@
             "label": "Número de posts/transformações a mostrar",
             "min": 3,
             "max": 8
+        },
+        {
+            "tag": "input",
+            "type": "select",
+            "attr": "order",
+            "label": "Ordenação:",
+            "help": "A ordem definida (-1, -2, 0) será respeitada antes da alfabética e cronológica.",
+            "options": [
+                {
+                    "label": "Alfabética (por título)",
+                    "value": "title"
+                },
+                {
+                    "label": "Cronológica (por data de publicação)",
+                    "value": "date"
+                }
+            ]
         }
     ]
 

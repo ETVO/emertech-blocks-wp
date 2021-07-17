@@ -25,13 +25,13 @@ function render_block_tabs($attributes, $content)
                         <?php echo $main_title; ?>
                     </h3>
                 </div>
-                <div class="nav nav-pills m-auto" id="<?php echo $block_id; ?>" role="tablist">
+                <div class="nav nav-pills m-auto align-items-center justify-content-center flex-column flex-lg-row" id="<?php echo $block_id; ?>" role="tablist">
                     <?php
                     for ($i = 1; $i != $noOfTabs + 1; $i++) :
                         if (!$attributes['hide' . $i]) :
                             $tab_icon = $attributes['tabIcon' . $i] ?? $tabs_icon;
                     ?>
-                            <button class="tabs-link nav-link mx-2 text-center" data-bs-toggle="tab" type="button" role="tab">
+                            <button class="tabs-link nav-link mx-1 mx-sm-2 my-1 text-center" data-bs-toggle="tab" type="button" role="tab">
                                 <!-- <span class="bi bi-<?php echo $tab_icon; ?> d-block"></span> -->
                                 <span class="text-light" id="<?php echo $attributes['anchor' . $i] ?>">
                                     <?php echo $attributes['title' . $i] ?>
