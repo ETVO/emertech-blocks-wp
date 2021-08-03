@@ -32,7 +32,7 @@ function render_block_tabs($attributes, $content)
                             $tab_icon = $attributes['tabIcon' . $i] ?? $tabs_icon;
                     ?>
                             <button class="tabs-link nav-link mx-1 mx-sm-2 my-1 text-center" data-bs-toggle="tab" type="button" role="tab">
-                                <!-- <span class="bi bi-<?php echo $tab_icon; ?> d-block"></span> -->
+                                <span class="bi bi-<?php echo $tab_icon; ?> d-block"></span>
                                 <span class="text-light" id="<?php echo $attributes['anchor' . $i] ?>">
                                     <?php echo $attributes['title' . $i] ?>
                                 </span>

@@ -16,8 +16,9 @@
             img {              
                 border-radius: 0.25rem;
                 width: 100%;
-                object-fit: contain;
+                object-fit: cover;
                 z-index: 1;
+                height: 4rem;
             }
 
             &.remain {
@@ -27,7 +28,7 @@
                 
                 div {
                     flex: 1;
-                    min-height: 3rem;
+                    height: 4rem;
                     z-index: 2;
                     display: flex;
                     
