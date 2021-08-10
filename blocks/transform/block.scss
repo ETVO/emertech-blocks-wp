@@ -24,15 +24,16 @@
         }
     }
     
-    .form {
-        border: solid 1px var(--bs-secondary);
+    .form-parent {
+        box-sizing: border-box;
+        overflow: visible;
         
-        input, textarea {
-            border: solid 1px var(--bs-secondary);
+    
+        .form {
+            position: sticky;
+            top: 15px;
 
-            &[type="checkbox"] {
-                background-color: var(--bs-dark);
-            }
+            border: solid 1px var(--bs-secondary);
         }
     }
 }
@@ -40,15 +41,10 @@
 @media all and (min-width: 1024.1px) {
     
     .eb-transform {
-        overflow: auto;
 
         .form-parent {
-            overflow: auto;
 
             .form {
-                position: -webkit-sticky !important;
-                position: sticky !important;
-                top: 0;
             }
 
         }
@@ -59,7 +55,6 @@
 @media all and (max-width: 576px) { 
     
     .eb-transform {
-        overflow: auto;
 
         .meta {
             .optionals {

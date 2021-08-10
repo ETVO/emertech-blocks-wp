@@ -15,7 +15,7 @@ function render_block_transform($attributes, $content)
 ?>
 
     <section class="eb-transform my-3 my-md-4 my-lg-5" id="<?php echo $anchor; ?>">
-        <form action="">
+        <form action="" method="post">
             <div class="container py-0">
                 <div class="row">
                     <div class="col-12 col-lg-8">
@@ -24,55 +24,60 @@ function render_block_transform($attributes, $content)
                                 echo $content;
                             ?>
                         </div>
-                        <div class="meta py-3">
-                            <div class="caracters pb-3">
-                                <?php
-                                    if($is_transform)
-                                        get_transform_template_part('partials/component-caracters'); 
-                                ?>
-                            </div>
+                        <?php if($is_transform): ?>
+                            <div class="meta">
+                                <?php if( get_the_terms( get_the_ID(), 'opcional' ) ): ?>
+                                    <div class="caracters pt-4">
+                                        <?php
+                                            get_transform_template_part('partials/component-caracters'); 
+                                        ?>
+                                    </div>
+                                <?php endif; ?>
 
-                            <?php if( get_the_terms( get_the_ID(), 'opcional' ) ): ?>
-                                <div class="optionals border border-primary rounded <?php if($optionals_title != '') echo 'show-title'; ?>">
-                                    <?php if($optionals_title != ''): ?>
-                                        <div class="title">
-                                            <h6 class="text-uppercase fw-normal bg-dark rounded px-1 text-primary">
-                                                <?php echo $optionals_title; ?>
-                                            </h6>
+                                <?php if( get_the_terms( get_the_ID(), 'opcional' ) ): ?>
+                                    <div class="optionals-wrap my-3">
+                                        <div class="optionals border border-primary rounded <?php if($optionals_title != '') echo 'show-title'; ?>">
+                                            <?php if($optionals_title != ''): ?>
+                                                <div class="title">
+                                                    <h6 class="text-uppercase fw-normal bg-dark rounded px-1 text-primary">
+                                                        <?php echo $optionals_title; ?>
+                                                    </h6>
+                                                </div>
+                                            <?php endif; ?>
+
+                                            <?php
+                                                get_transform_template_part('partials/component-optionals'); 
+                                            ?>
+
+                                            <button id="continueToRequestBtn" class="btn btn-primary d-none continue" type="button">
+                                                <?php echo $continue_btn_label; ?>
+                                            </button>
                                         </div>
-                                    <?php endif; ?>
-
-                                    <?php
-                                    if($is_transform)
-                                        get_transform_template_part('partials/component-optionals'); 
-                                    ?>
-
-                                    <button id="continueToRequestBtn" class="btn btn-primary d-none continue" type="button">
-                                        <?php echo $continue_btn_label; ?>
-                                    </button>
-                                </div>
-                            <?php endif; ?>
-                        </div>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+                        <?php endif; ?>
                     </div>
-                    <div class="form-parent col-12 col-lg-4 pt-4 pt-lg-0 ps-lg-4 ps-xl-5 d-flex flex-column d-lg-block">
-                        <div class="form p-3 rounded m-auto"
-                            title="<?php echo __('Últimos passos para enviar a sua solicitação!'); ?>" 
-                            data-bs-placement="left"
-                            data-bs-custom-class="primary-tooltip">
+                    <?php if($is_transform): ?>
+                        <div class="form-parent col-12 col-md-6 m-auto m-lg-0 col-lg-4 ps-md-0 pt-4 pt-lg-0 ps-lg-4 ps-xl-5 d-flex d-lg-block">
+                            <div class="form p-3 rounded w-100"
+                                title="<?php echo __('Últimos passos para enviar a sua solicitação!'); ?>" 
+                                data-bs-placement="left"
+                                data-bs-custom-class="primary-tooltip">
 
-                            <?php if($form_title != ''): ?>
-                                <div class="title">
-                                    <h4><?php echo $form_title; ?></h4>
-                                </div>
-                            <?php endif; ?>
-                            
-                            <?php 
-                                if($is_transform)
+                                <?php if($form_title != ''): ?>
+                                    <div class="title">
+                                        <h5><?php echo $form_title; ?></h5>
+                                    </div>
+                                <?php endif; ?>
+                                
+                                <?php 
                                     get_transform_template_part('partials/component-form');
-                            ?>
+                                ?>
 
+                            </div>
                         </div>
-                    </div>
+                    <?php endif; ?>
                 </div>
             </div>
         </form>

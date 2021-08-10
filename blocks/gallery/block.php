@@ -42,7 +42,7 @@ function render_block_gallery($attributes)
                             $remain = $images_count - $i;
                             
                             ?>                            
-                                <div class="image-preview remain mx-1 mx-md-0 my-md-1"
+                                <div class="image-preview fs-5 remain mx-1 mx-md-0 my-md-1"
                                 data-bs-target="#<?php echo $modal_id; ?>" 
                                 data-bs-toggle="modal" 
                                 data-bs-dismiss="modal">
@@ -105,7 +105,7 @@ function render_block_gallery($attributes)
                         </button>
                     </div>
                     <div class="modal-body">
-                        <div id="<?php echo $modal_carousel_id; ?>" class="carousel slide" data-bs-ride="carousel" data-bs-interval="40000">
+                        <div id="<?php echo $modal_carousel_id; ?>" class="carousel slide" data-touch='false' data-bs-ride="carousel" data-bs-interval="40000">
 
                             <div class="carousel-inner h-100">
                                 <?php for ($i = 0; $i < count($images); $i++) : ?>

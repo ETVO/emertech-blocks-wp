@@ -28,7 +28,7 @@
                 
                 div {
                     flex: 1;
-                    height: 4rem;
+                    height: 3rem;
                     z-index: 2;
                     display: flex;
                     
@@ -37,7 +37,6 @@
 
                     span {
                         margin: auto;
-                        font-size: 1.5rem;
                     }
                 }
     
@@ -187,6 +186,17 @@ body {
     .eb-gallery {
 
         .preview-bar {
+            
+            .image-preview {
+    
+                &.remain {
+                    
+                    div {
+                        height: 4rem;
+                        width: 3rem;
+                    }
+                }
+            }
         }
     }
 }
