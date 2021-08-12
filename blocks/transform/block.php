@@ -9,6 +9,8 @@ function render_block_transform($attributes, $content)
     $is_transform = class_exists('Emertech_Transform_CPT') && is_singular('transform');
 
     $optionals_title = get_theme_mod('emertech_transform_optionals_title');
+    
+    $hide_form = get_theme_mod('emertech_transform_form_hide', 0);
 
     $continue_btn_label = get_theme_mod( 'emertech_transform_strings_continue_btn' );
     if($continue_btn_label == '') $continue_btn_label = __('Continuar');
@@ -18,7 +20,7 @@ function render_block_transform($attributes, $content)
         <form action="" method="post">
             <div class="container py-0">
                 <div class="row">
-                    <div class="col-12 col-lg-8">
+                    <div class="col-12 col-lg-8 <?php if(!$is_transform || $hide_form) echo "m-auto"; ?>">
                         <div class="content">
                             <?php 
                                 echo $content;
@@ -58,7 +60,7 @@ function render_block_transform($attributes, $content)
                             </div>
                         <?php endif; ?>
                     </div>
-                    <?php if($is_transform): ?>
+                    <?php if($is_transform && !$hide_form): ?>
                         <div class="form-parent col-12 col-md-6 m-auto m-lg-0 col-lg-4 ps-md-0 pt-4 pt-lg-0 ps-lg-4 ps-xl-5 d-flex d-lg-block">
                             <div class="form p-3 rounded w-100"
                                 title="<?php echo __('Últimos passos para enviar a sua solicitação!'); ?>" 
