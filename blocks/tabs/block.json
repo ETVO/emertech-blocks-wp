@@ -22,7 +22,7 @@
             "type": "string"
         },
         "hide1": {
-            "type": "string"
+            "type": "boolean"
         },
         "anchor1": {
             "type": "string"
@@ -34,7 +34,7 @@
             "type": "string"
         },
         "hide2": {
-            "type": "string"
+            "type": "boolean"
         },
         "anchor2": {
             "type": "string"
@@ -46,7 +46,7 @@
             "type": "string"
         },
         "hide3": {
-            "type": "string"
+            "type": "boolean"
         },
         "anchor3": {
             "type": "string"

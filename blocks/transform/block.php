@@ -28,7 +28,7 @@ function render_block_transform($attributes, $content)
                         </div>
                         <?php if($is_transform): ?>
                             <div class="meta">
-                                <?php if( get_the_terms( get_the_ID(), 'opcional' ) ): ?>
+                                <?php if( get_the_terms( get_the_ID(), 'caracters' ) ): ?>
                                     <div class="caracters pt-4">
                                         <?php
                                             get_transform_template_part('partials/component-caracters'); 

@@ -125,7 +125,7 @@ import data from "./blocks.json";
 
             block = blocks.find(block => {
                 return block.name === name;
-            })
+            });
 
             if(typeof block === "undefined") return __("Bloco " + name +  " indisponível");
 
